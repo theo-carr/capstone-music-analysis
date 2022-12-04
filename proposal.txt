@@ -1,0 +1,28 @@
+Executive Summary
+- The motivation for this project is my own interest in listening and playing music. I Will be using the spotify API
+  in conjunction with webscraping to attempt to answer the broad question: "What is the direction of music today, and how
+  does it compare with the top music of past decades?"
+
+Motivation 
+- I have been a practicing musician since I was 10 years old, but also a huge fan of math. For this reason I have always
+  taken an analytical approcach to learning music and have had a fascination with the component that make up good music.
+  After looking into Spotify's API and the data it is able to provide, I got excited at the prospect of systematically looking
+  at the facts and features that make up the music I love. 
+
+Data question
+- What features make up the newest music today? the most popular music of today? and how do these features compare with the 
+  features of past generations of music? has our collective taste of what we like about music changed over time?
+
+MVP
+- Analysis of new music vs the top songs of past decades spanning back to the 1940s
+
+Data Sources
+- Anaylsis of the features and components of songs will all come from the spotify API. As for what songs get plugged into the
+  API, these will be scraped from various sources on the web such as top songs lists from each decade.
+
+Known issues and challenges
+- interacting with the spotify api is a technical challenge, as there will need to be a good data flow since answering the 
+  data question requires using multiple of the API endpoints in conjunction
+    - However using an API will make the data come in a clean format that is ready to use
+- web scraping for songs to plug into the API; the websites that I have seen from preliminary research are ill-formatted and 
+  will require serious cleaning, especially if I pull from multiple websites

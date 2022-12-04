@@ -1,0 +1,17 @@
+What is music like today, and how does it compare to music of the past?
+
+
+--Data Flow---
+1. get new releases (albums)
+2. get_albums()
+3. from get albums we can get all the tracks
+4. from there we pull stats on the audio, and possibly advertising
+    4a. going to just start with audio features, not audio analysis; that will be a stretch goal
+
+
+--Stretch Ideas--
+1. looking at different global markets 
+
+2. looking at user info... maybe 
+
+3.bring in some of the more techical audio analysis
