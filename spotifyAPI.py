@@ -4,10 +4,18 @@ import json
 import time
 
 # Read in secret key from json file
-secret_key_file  = open("../spotify/secret/secret_key.json")
-secret_key_json = json.load(secret_key_file)
-secret_key = secret_key_json.get("secret_key")
-secret_key_file.close()
+try:
+    secret_key_file  = open("../spotify/secret/secret_key.json")
+    secret_key_json = json.load(secret_key_file)
+    secret_key = secret_key_json.get("secret_key")
+    secret_key_file.close()
+except:
+    try:
+        with open('../secret/secret_key.json') as secret_key_file:
+            secret_key_json = json.load(secret_key_file)
+            secret_key = secret_key_json.get('secret_key')
+    except: 
+        print('something went wrong looking for secret key')
 
 #create the get_token function to ask spotify api for an access token
 def get_token():
@@ -43,24 +51,24 @@ def get_available_genre_seeds():
     #return data
     return response.json()
     
-def save_genres():
-    #get genre seeds from spotify
-    genre_seeds = get_available_genre_seeds().get("genres")
+# def save_genres():
+#     #get genre seeds from spotify
+#     genre_seeds = get_available_genre_seeds().get("genres")
 
-    #write seeds to file
-    with open("../spotify/data/genre_seeds.txt", "w") as fp:
-        for item in genre_seeds:
-            fp.write("%s\n" % item)
-        print("Done")
+#     #write seeds to file
+#     with open("../spotify/data/genre_seeds.txt", "w") as fp:
+#         for item in genre_seeds:
+#             fp.write("%s\n" % item)
+#         print("Done")
 
 
-def read_genres():
-    with open("../spotify/data/genre_seeds.txt", "r") as fp:
-        genres = [line[:-1] for line in fp]
-    print("Done")
+# def read_genres():
+#     with open("../spotify/data/genre_seeds.txt", "r") as fp:
+#         genres = [line[:-1] for line in fp]
+#     print("Done")
     
-    return genres 
-genre_seeds = read_genres()
+#     return genres 
+# genre_seeds = read_genres()
 
 
 def recommendations(track_id = "4nFAL2TKUOoAPQJ5DGGoTd"):
@@ -89,7 +97,6 @@ def search(search_term = "clay%20pigeons", music_type = "track,album", limit = 5
         search_term = search_term.replace(' ', '%20')
         
     url = f"https://api.spotify.com/v1/search?q=track:{search_term}&type={music_type}&limit={limit}"
-    print(url)
 
     access_token = get_token().get('access_token')
     
