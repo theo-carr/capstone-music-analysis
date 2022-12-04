@@ -81,12 +81,15 @@ def recommendations(track_id = "4nFAL2TKUOoAPQJ5DGGoTd"):
 
     return response.json()
 
-def search(search_term = "clay%20pigeons", music_type = "track,album"):
+def search(search_term = "clay%20pigeons", music_type = "track,album", limit = 5):
+    #sleep to not go over api request limit
+    time.sleep(3)
     #turn spaces into %20
     if search_term.find(" ") != -1:
         search_term = search_term.replace(' ', '%20')
         
-    url = f"https://api.spotify.com/v1/search?q=track:{search_term}&type={music_type}"
+    url = f"https://api.spotify.com/v1/search?q=track:{search_term}&type={music_type}&limit={limit}"
+    print(url)
 
     access_token = get_token().get('access_token')
     
@@ -172,6 +175,22 @@ def get_several_albums(ids, market = "US"):
     response = requests.get(url, headers=headers)
 
     return response.json().get('albums')
+
+def get_several_tracks(ids = "7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ"):
+    url = f"https://api.spotify.com/v1/tracks?ids={ids}"
+
+    access_token = get_token().get('access_token')
+
+    headers = {
+        'Content-Type' : 'application/json',
+        'Authorization' : f'Bearer {access_token}'
+    }
+
+    response = requests.get(url, headers=headers)
+
+    return response.json()
+
+    
 
 
 
