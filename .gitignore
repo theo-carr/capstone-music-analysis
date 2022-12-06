@@ -7,3 +7,6 @@ secret/
 #pycache
 __pycache__/
 
+#notes
+notes/
+
