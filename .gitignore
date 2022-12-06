@@ -4,3 +4,6 @@ data/
 #secret
 secret/
 
+#pycache
+__pycache__/
+
