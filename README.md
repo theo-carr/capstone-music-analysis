@@ -1,4 +1,4 @@
-# What distinct features make up popular music today, and do these features differs from past generations of popular music
+# What distinct features make up popular music today, and do these features differs from past generations of popular music?
 
 ## Inspiration
 I am a lifelong musician and music lover. I have played piano since I was ten years old, and picked up guitar when I was sixteen. Due to this, I have always been drawn to older, more instrumental music. This got me thinking, are popular songs today really less instrumental? In comes the spotify API; an extensive, free resource that tracks "audio features" for each song they have available on their platform. These "audio features" consist of really cool stats such as *energy*, *danceability*, *speechiness*, and importantly *instrumentalness* 
