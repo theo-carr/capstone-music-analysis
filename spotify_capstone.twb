@@ -1,0 +1,1211 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20222.22.0916.1526                               -->
+<workbook original-version='18.1' source-build='2022.2.2 (20222.22.0916.1526)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <style>
+    <style-rule element='gridline'>
+      <format attr='stroke-color' value='#191414' />
+      <format attr='stroke-size' value='1' />
+      <format attr='line-visibility' value='off' />
+    </style-rule>
+    <style-rule element='tooltip'>
+      <format attr='color' value='#1db954' />
+    </style-rule>
+    <style-rule element='all'>
+      <format attr='color' value='#ffffff' />
+      <format attr='font-family' value='Yu Gothic UI Semibold' />
+    </style-rule>
+  </style>
+  <datasources>
+    <datasource caption='all_charts_nondup' inline='true' name='federated.07gz19p0mtp7dx170vfiv0s5ub1g' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='all_charts_nondup' name='textscan.12j1a8e0rl14o91cf9umo07jrwvv'>
+            <connection class='textscan' directory='C:/Users/theoc/Documents/NSS/spotify/data' filename='all_charts_nondup.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.12j1a8e0rl14o91cf9umo07jrwvv' name='af_charts_combined.csv' table='[af_charts_combined#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='date' name='date' ordinal='0' />
+            <column datatype='integer' name='rank' ordinal='1' />
+            <column datatype='string' name='song' ordinal='2' />
+            <column datatype='string' name='artist' ordinal='3' />
+            <column datatype='real' name='last-week' ordinal='4' />
+            <column datatype='integer' name='peak-rank' ordinal='5' />
+            <column datatype='integer' name='weeks-on-board' ordinal='6' />
+            <column datatype='date' date-parse-format='yyyy' name='release_year' ordinal='7' />
+            <column datatype='string' name='track_id' ordinal='8' />
+            <column datatype='real' name='danceability' ordinal='9' />
+            <column datatype='real' name='energy' ordinal='10' />
+            <column datatype='real' name='key' ordinal='11' />
+            <column datatype='real' name='loudness' ordinal='12' />
+            <column datatype='real' name='mode' ordinal='13' />
+            <column datatype='real' name='speechiness' ordinal='14' />
+            <column datatype='real' name='acousticness' ordinal='15' />
+            <column datatype='real' name='instrumentalness' ordinal='16' />
+            <column datatype='real' name='liveness' ordinal='17' />
+            <column datatype='real' name='valence' ordinal='18' />
+            <column datatype='real' name='tempo' ordinal='19' />
+            <column datatype='string' name='type' ordinal='20' />
+            <column datatype='string' name='id' ordinal='21' />
+            <column datatype='string' name='uri' ordinal='22' />
+            <column datatype='string' name='track_href' ordinal='23' />
+            <column datatype='string' name='analysis_url' ordinal='24' />
+            <column datatype='real' name='duration_ms' ordinal='25' />
+            <column datatype='real' name='time_signature' ordinal='26' />
+            <column datatype='string' name='error' ordinal='27' />
+            <column datatype='string' name='Unnamed: 0' ordinal='28' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.12j1a8e0rl14o91cf9umo07jrwvv' name='af_charts_combined.csv' table='[af_charts_combined#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='date' name='date' ordinal='0' />
+            <column datatype='integer' name='rank' ordinal='1' />
+            <column datatype='string' name='song' ordinal='2' />
+            <column datatype='string' name='artist' ordinal='3' />
+            <column datatype='real' name='last-week' ordinal='4' />
+            <column datatype='integer' name='peak-rank' ordinal='5' />
+            <column datatype='integer' name='weeks-on-board' ordinal='6' />
+            <column datatype='date' date-parse-format='yyyy' name='release_year' ordinal='7' />
+            <column datatype='string' name='track_id' ordinal='8' />
+            <column datatype='real' name='danceability' ordinal='9' />
+            <column datatype='real' name='energy' ordinal='10' />
+            <column datatype='real' name='key' ordinal='11' />
+            <column datatype='real' name='loudness' ordinal='12' />
+            <column datatype='real' name='mode' ordinal='13' />
+            <column datatype='real' name='speechiness' ordinal='14' />
+            <column datatype='real' name='acousticness' ordinal='15' />
+            <column datatype='real' name='instrumentalness' ordinal='16' />
+            <column datatype='real' name='liveness' ordinal='17' />
+            <column datatype='real' name='valence' ordinal='18' />
+            <column datatype='real' name='tempo' ordinal='19' />
+            <column datatype='string' name='type' ordinal='20' />
+            <column datatype='string' name='id' ordinal='21' />
+            <column datatype='string' name='uri' ordinal='22' />
+            <column datatype='string' name='track_href' ordinal='23' />
+            <column datatype='string' name='analysis_url' ordinal='24' />
+            <column datatype='real' name='duration_ms' ordinal='25' />
+            <column datatype='real' name='time_signature' ordinal='26' />
+            <column datatype='string' name='error' ordinal='27' />
+            <column datatype='string' name='Unnamed: 0' ordinal='28' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[rank]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>rank</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>song</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[song]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>song</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>artist</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[artist]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>artist</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>last-week</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[last-week]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>last-week</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>peak-rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[peak-rank]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>peak-rank</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>weeks-on-board</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[weeks-on-board]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>weeks-on-board</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>release_year</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[release_year]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>release_year</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>track_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[track_id]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>track_id</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>danceability</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[danceability]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>danceability</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>energy</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[energy]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>energy</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>key</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[key]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>key</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>loudness</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[loudness]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>loudness</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mode</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[mode]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>mode</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>speechiness</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[speechiness]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>speechiness</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>acousticness</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[acousticness]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>acousticness</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>instrumentalness</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[instrumentalness]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>instrumentalness</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>liveness</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[liveness]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>liveness</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>valence</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[valence]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>valence</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tempo</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[tempo]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>tempo</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[type]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>type</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>uri</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[uri]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>uri</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>track_href</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[track_href]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>track_href</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>analysis_url</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[analysis_url]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>analysis_url</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>duration_ms</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[duration_ms]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>duration_ms</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time_signature</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[time_signature]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>time_signature</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>error</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[error]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>error</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Unnamed: 0</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Unnamed: 0]</local-name>
+            <parent-name>[af_charts_combined.csv]</parent-name>
+            <remote-alias>Unnamed: 0</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='line_show' datatype='real' name='[Calculation_908319789042429953]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='if [Parameters].[Parameter 1] == &quot;Acousticness&quot; THEN [acousticness]&#13;&#10;elseif [Parameters].[Parameter 1] == &quot;Danceability&quot; THEN [danceability]&#13;&#10;elseif [Parameters].[Parameter 1] == &quot;Energy&quot; THEN [energy]&#13;&#10;ELSEIF  [Parameters].[Parameter 1] == &quot;Instrumentalness&quot; THEN [instrumentalness]&#13;&#10;elseif [Parameters].[Parameter 1] == &quot;Liveness&quot; THEN [liveness]&#13;&#10;elseif [Parameters].[Parameter 1] == &quot;Loudness&quot; THEN [loudness]&#13;&#10;elseif [Parameters].[Parameter 1] == &quot;Speechiness&quot; THEN [speechiness]&#13;&#10;elseif [Parameters].[Parameter 1] == &quot;Valence&quot; THEN [valence]&#13;&#10;else [acousticness]&#13;&#10;END' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='af_charts_combined.csv' datatype='table' name='[__tableau_internal_object_id__].[af_charts_combined.csv_56B1A0C6A47C4A39BF2E8B8EEA0FF01A]' role='measure' type='quantitative' />
+      <column caption='Acousticness' datatype='real' name='[acousticness]' role='measure' type='quantitative' />
+      <column caption='Analysis Url' datatype='string' name='[analysis_url]' role='dimension' type='nominal' />
+      <column caption='Artist' datatype='string' name='[artist]' role='dimension' type='nominal' />
+      <column caption='Danceability' datatype='real' name='[danceability]' role='measure' type='quantitative' />
+      <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+      <column caption='Duration Ms' datatype='real' name='[duration_ms]' role='measure' type='quantitative' />
+      <column caption='Energy' datatype='real' name='[energy]' role='measure' type='quantitative' />
+      <column caption='Error' datatype='string' name='[error]' role='dimension' type='nominal' />
+      <column caption='Id' datatype='string' name='[id]' role='dimension' type='nominal' />
+      <column caption='Instrumentalness' datatype='real' name='[instrumentalness]' role='measure' type='quantitative' />
+      <column caption='Key' datatype='real' name='[key]' role='dimension' type='ordinal' />
+      <column caption='Last-Week' datatype='real' name='[last-week]' role='dimension' type='quantitative' />
+      <column caption='Liveness' datatype='real' name='[liveness]' role='measure' type='quantitative' />
+      <column caption='Loudness' datatype='real' name='[loudness]' role='measure' type='quantitative' />
+      <column caption='Mode' datatype='real' name='[mode]' role='measure' type='quantitative' />
+      <column caption='Peak-Rank' datatype='integer' name='[peak-rank]' role='measure' type='quantitative' />
+      <column caption='Rank' datatype='integer' name='[rank]' role='measure' type='quantitative' />
+      <column caption='Release Year' datatype='date' name='[release_year]' role='dimension' type='quantitative' />
+      <column caption='Song' datatype='string' name='[song]' role='dimension' type='nominal' />
+      <column caption='Speechiness' datatype='real' name='[speechiness]' role='measure' type='quantitative' />
+      <column caption='Tempo' datatype='real' name='[tempo]' role='measure' type='quantitative' />
+      <column caption='Time Signature' datatype='real' name='[time_signature]' role='measure' type='quantitative' />
+      <column caption='Track Href' datatype='string' name='[track_href]' role='dimension' type='nominal' />
+      <column caption='Track Id' datatype='string' name='[track_id]' role='dimension' type='nominal' />
+      <column caption='Type' datatype='string' name='[type]' role='dimension' type='nominal' />
+      <column caption='Uri' datatype='string' name='[uri]' role='dimension' type='nominal' />
+      <column caption='Valence' datatype='real' name='[valence]' role='measure' type='quantitative' />
+      <column caption='Weeks-On-Board' datatype='integer' name='[weeks-on-board]' role='measure' type='quantitative' />
+      <column-instance column='[acousticness]' derivation='Avg' name='[avg:acousticness:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[danceability]' derivation='Avg' name='[avg:danceability:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[energy]' derivation='Avg' name='[avg:energy:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[acousticness]' derivation='Sum' name='[sum:acousticness:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[danceability]' derivation='Sum' name='[sum:danceability:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[energy]' derivation='Sum' name='[sum:energy:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[liveness]' derivation='Sum' name='[sum:liveness:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[loudness]' derivation='Sum' name='[sum:loudness:qk]' pivot='key' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[avg:danceability:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[sum:danceability:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[sum:loudness:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[avg:acousticness:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[sum:acousticness:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[sum:liveness:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[avg:energy:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[sum:energy:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='line_selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Danceability&quot;'>
+          <calculation class='tableau' formula='&quot;Danceability&quot;' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='af_charts_combined.csv' id='af_charts_combined.csv_56B1A0C6A47C4A39BF2E8B8EEA0FF01A'>
+            <properties context=''>
+              <relation connection='textscan.12j1a8e0rl14o91cf9umo07jrwvv' name='af_charts_combined.csv' table='[af_charts_combined#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='date' name='date' ordinal='0' />
+                  <column datatype='integer' name='rank' ordinal='1' />
+                  <column datatype='string' name='song' ordinal='2' />
+                  <column datatype='string' name='artist' ordinal='3' />
+                  <column datatype='real' name='last-week' ordinal='4' />
+                  <column datatype='integer' name='peak-rank' ordinal='5' />
+                  <column datatype='integer' name='weeks-on-board' ordinal='6' />
+                  <column datatype='date' date-parse-format='yyyy' name='release_year' ordinal='7' />
+                  <column datatype='string' name='track_id' ordinal='8' />
+                  <column datatype='real' name='danceability' ordinal='9' />
+                  <column datatype='real' name='energy' ordinal='10' />
+                  <column datatype='real' name='key' ordinal='11' />
+                  <column datatype='real' name='loudness' ordinal='12' />
+                  <column datatype='real' name='mode' ordinal='13' />
+                  <column datatype='real' name='speechiness' ordinal='14' />
+                  <column datatype='real' name='acousticness' ordinal='15' />
+                  <column datatype='real' name='instrumentalness' ordinal='16' />
+                  <column datatype='real' name='liveness' ordinal='17' />
+                  <column datatype='real' name='valence' ordinal='18' />
+                  <column datatype='real' name='tempo' ordinal='19' />
+                  <column datatype='string' name='type' ordinal='20' />
+                  <column datatype='string' name='id' ordinal='21' />
+                  <column datatype='string' name='uri' ordinal='22' />
+                  <column datatype='string' name='track_href' ordinal='23' />
+                  <column datatype='string' name='analysis_url' ordinal='24' />
+                  <column datatype='real' name='duration_ms' ordinal='25' />
+                  <column datatype='real' name='time_signature' ordinal='26' />
+                  <column datatype='string' name='error' ordinal='27' />
+                  <column datatype='string' name='Unnamed: 0' ordinal='28' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='line_selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Danceability&quot;'>
+        <calculation class='tableau' formula='&quot;Danceability&quot;' />
+        <members>
+          <member value='&quot;Acousticness&quot;' />
+          <member value='&quot;Danceability&quot;' />
+          <member value='&quot;Energy&quot;' />
+          <member value='&quot;Instrumentalness&quot;' />
+          <member value='&quot;Liveness&quot;' />
+          <member value='&quot;Loudness&quot;' />
+          <member value='&quot;Speechiness&quot;' />
+          <member value='&quot;Valence&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='musicdata_clean' inline='true' name='federated.154cm6u033iwps14i09uf0rqp8p3' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='musicdata_clean' name='textscan.0dmymu90g5tb8c1h03qnl1uh5zvt'>
+            <connection class='textscan' directory='C:/Users/theoc/Documents/NSS/spotify/data' filename='musicdata_clean.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0dmymu90g5tb8c1h03qnl1uh5zvt' name='musicdata_clean.csv' table='[musicdata_clean#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='format' ordinal='0' />
+            <column datatype='string' name='metric' ordinal='1' />
+            <column datatype='integer' name='year' ordinal='2' />
+            <column datatype='real' name='value_actual' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0dmymu90g5tb8c1h03qnl1uh5zvt' name='musicdata_clean.csv' table='[musicdata_clean#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='format' ordinal='0' />
+            <column datatype='string' name='metric' ordinal='1' />
+            <column datatype='integer' name='year' ordinal='2' />
+            <column datatype='real' name='value_actual' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[musicdata_clean.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>format</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[format]</local-name>
+            <parent-name>[musicdata_clean.csv]</parent-name>
+            <remote-alias>format</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>metric</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[metric]</local-name>
+            <parent-name>[musicdata_clean.csv]</parent-name>
+            <remote-alias>metric</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[musicdata_clean.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>value_actual</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[value_actual]</local-name>
+            <parent-name>[musicdata_clean.csv]</parent-name>
+            <remote-alias>value_actual</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <_.fcp.ObjectModelTableType.true...column caption='musicdata_clean.csv' datatype='table' name='[__tableau_internal_object_id__].[musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF]' role='measure' type='quantitative' />
+      <column caption='Format' datatype='string' name='[format]' role='dimension' type='nominal' />
+      <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
+      <column caption='Value Actual' datatype='real' name='[value_actual]' role='measure' type='quantitative' />
+      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='musicdata_clean.csv' id='musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF'>
+            <properties context=''>
+              <relation connection='textscan.0dmymu90g5tb8c1h03qnl1uh5zvt' name='musicdata_clean.csv' table='[musicdata_clean#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='format' ordinal='0' />
+                  <column datatype='string' name='metric' ordinal='1' />
+                  <column datatype='integer' name='year' ordinal='2' />
+                  <column datatype='real' name='value_actual' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='copmare_two'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='all_charts_nondup' name='federated.07gz19p0mtp7dx170vfiv0s5ub1g' />
+          </datasources>
+          <datasource-dependencies datasource='federated.07gz19p0mtp7dx170vfiv0s5ub1g'>
+            <column caption='Acousticness' datatype='real' name='[acousticness]' role='measure' type='quantitative' />
+            <column-instance column='[acousticness]' derivation='Avg' name='[avg:acousticness:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[danceability]' derivation='Avg' name='[avg:danceability:qk]' pivot='key' type='quantitative' />
+            <column caption='Danceability' datatype='real' name='[danceability]' role='measure' type='quantitative' />
+            <column-instance column='[release_year]' derivation='None' name='[none:release_year:qk]' pivot='key' type='quantitative' />
+            <column caption='Release Year' datatype='date' name='[release_year]' role='dimension' type='quantitative' />
+            <column-instance column='[release_year]' derivation='Year-Trunc' name='[tyr:release_year:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[release_year]' derivation='Year' name='[yr:release_year:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:release_year:qk]' included-values='in-range'>
+            <min>#1960-01-01#</min>
+            <max>#2021-01-01#</max>
+          </filter>
+          <filter class='categorical' column='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[yr:release_year:ok]'>
+            <groupfilter from='1960' function='range' level='[yr:release_year:ok]' to='2021' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[yr:release_year:ok]</column>
+            <column>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:release_year:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[avg:acousticness:qk]' field-type='quantitative' max='1.0' min='0.0' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[avg:danceability:qk]' field-type='quantitative' max='1.0' min='0.0' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='border-color' value='#1db954' />
+            <format attr='border-width' value='0' />
+            <format attr='border-style' value='none' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[tyr:release_year:qk]' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#d7ebde</color>
+                <color>#bfe5cc</color>
+                <color>#a7e0bb</color>
+                <color>#90daaa</color>
+                <color>#7bd59a</color>
+                <color>#66cf8b</color>
+                <color>#52c97c</color>
+                <color>#3fc46e</color>
+                <color>#2dbe60</color>
+                <color>#1db954</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-style' value='solid' />
+            <format attr='border-color' data-class='subtotal' value='#59a14f' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#191414' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[tyr:release_year:qk]' />
+              <lod column='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[tyr:release_year:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#191414' />
+                <format attr='size' value='1.4612706899642944' />
+                <format attr='mark-transparency' value='198' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[avg:danceability:qk]</rows>
+        <cols>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[avg:acousticness:qk]</cols>
+      </table>
+      <simple-id uuid='{4CD61853-BC4C-484A-9923-9A5C621AF0BA}' />
+    </worksheet>
+    <worksheet name='interactive_line'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>&quot;Acousticness&quot; Over Time</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='all_charts_nondup' name='federated.07gz19p0mtp7dx170vfiv0s5ub1g' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='line_selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Danceability&quot;'>
+              <calculation class='tableau' formula='&quot;Danceability&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.07gz19p0mtp7dx170vfiv0s5ub1g'>
+            <column caption='line_show' datatype='real' name='[Calculation_908319789042429953]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='if [Parameters].[Parameter 1] == &quot;Acousticness&quot; THEN [acousticness]&#13;&#10;elseif [Parameters].[Parameter 1] == &quot;Danceability&quot; THEN [danceability]&#13;&#10;elseif [Parameters].[Parameter 1] == &quot;Energy&quot; THEN [energy]&#13;&#10;ELSEIF  [Parameters].[Parameter 1] == &quot;Instrumentalness&quot; THEN [instrumentalness]&#13;&#10;elseif [Parameters].[Parameter 1] == &quot;Liveness&quot; THEN [liveness]&#13;&#10;elseif [Parameters].[Parameter 1] == &quot;Loudness&quot; THEN [loudness]&#13;&#10;elseif [Parameters].[Parameter 1] == &quot;Speechiness&quot; THEN [speechiness]&#13;&#10;elseif [Parameters].[Parameter 1] == &quot;Valence&quot; THEN [valence]&#13;&#10;else [acousticness]&#13;&#10;END' />
+            </column>
+            <column caption='Acousticness' datatype='real' name='[acousticness]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_908319789042429953]' derivation='Avg' name='[avg:Calculation_908319789042429953:qk]' pivot='key' type='quantitative' />
+            <column caption='Danceability' datatype='real' name='[danceability]' role='measure' type='quantitative' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column caption='Energy' datatype='real' name='[energy]' role='measure' type='quantitative' />
+            <column caption='Instrumentalness' datatype='real' name='[instrumentalness]' role='measure' type='quantitative' />
+            <column caption='Liveness' datatype='real' name='[liveness]' role='measure' type='quantitative' />
+            <column caption='Loudness' datatype='real' name='[loudness]' role='measure' type='quantitative' />
+            <column caption='Speechiness' datatype='real' name='[speechiness]' role='measure' type='quantitative' />
+            <column caption='Valence' datatype='real' name='[valence]' role='measure' type='quantitative' />
+            <column-instance column='[date]' derivation='Year' name='[yr:date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[avg:Calculation_908319789042429953:qk]' field-type='quantitative' max='1.0' min='0.0' range-type='fixed' scope='rows' type='space' />
+            <format attr='title' class='0' field='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[avg:Calculation_908319789042429953:qk]' scope='rows' value='Average of Top Sogs' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='background-color' value='#191414' />
+            <format attr='band-color' scope='rows' value='#1db954' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='background-color' value='#191414' />
+            <format attr='band-color' scope='rows' value='#1db954' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#191414' />
+            <format attr='band-size' scope='rows' value='1' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='1' />
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='solid' />
+            <format attr='stroke-color' value='#1db95434' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-markers-mode' value='auto' />
+                <format attr='mark-transparency' value='167' />
+                <format attr='mark-color' value='#1db954' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[avg:Calculation_908319789042429953:qk]</rows>
+        <cols>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[yr:date:ok]</cols>
+      </table>
+      <simple-id uuid='{E2CD53DB-1EB5-4D23-B953-0CEC0CD356C3}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='51'>
+    <window class='worksheet' name='interactive_line'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='100'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[yr:date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{81ED697F-F019-438D-8FD7-03D0756C9F76}' />
+    </window>
+    <window class='worksheet' maximized='true' name='copmare_two'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:release_year:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card pane-specification-id='1' param='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[tyr:release_year:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[tdy:release_year:qk]</field>
+            <field>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[tyr:release_year:ok]</field>
+            <field>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[tyr:release_year:qk]</field>
+            <field>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[yr:release_year:ok]</field>
+            <field>[federated.154cm6u033iwps14i09uf0rqp8p3].[none:format:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{AF0EB09C-12D7-4378-8AAE-F31A92165707}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='copmare_two' width='192'>
+      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
+      AABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='interactive_line' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAVgklEQVR4nO2d6W8c533HP8/syeVyeS9FkaKok7YOW7ZlybKc2LVjx3ZsB4mTF0WBBC1Q
+      FAUKtEFRoP07+ipAgQJt0SZpjMRJfEhqrMiyZFmSddg6LFGieIjXLsXlklwee8zTFw+PXe5S
+      WomHxJ3fBxC0/M08M8/MPt95ru8zq2zb1giCQ3FrrWluaHjY+RCEh4L1sDMgCA8TEYDw6OKr
+      4Ps//CF7n2gDwF9RRbnPtayncC/r0QRhOfEFKUvH2PrEPjbtfY1wXZDx2+2EAh7+9d/+Z1lO
+      ITWA8OiSnqY83MpATw8upuntuMHYVJKvvr60bKdQmUxGP2gn2LIslFJkMplly5AgrCZLagI1
+      NTdz8IUX+MV7v8jd4HfDVFpipRhTCnwWTGU99CwFHgumF8TcFiSzYi7LtDlS9nzMbYFaEPNY
+      oIF0VszrgowNmaxR+2W4rqIE4A3W8oPXD3Lo86u8++a3GBqM4FEZfv3+R3TcvAnTdm4ClZFY
+      KccgN6YAW+fGLExhTWbFXNoII7uwzxbotM6NaXILu40RQHZWluG6iuoDJMdjWP5Kdu15hvHE
+      BE9ub8LyBYtJKgiPNEU2gWyOHDqEtm0Ga6v4IDJClX9lMyYIq0HRfYChaASAO3eGABhfmfwI
+      wqoiw6CCoxEBCI5GBCA4GhGA4GhEAIKjEQEIjkYEIDiaouYBduzZR40vzfn2fl59cS9dvRH0
+      +DAXrrSvdP4EYUUpSgCPb92IVpqKaIrWtidwp09jNdczMpFi6/btnL54NjeBv8CiBYmVbkwB
+      XssY5WaxFLiV+X8W18zfrqyYe+ZzthfIYxlvUbYXyGtBeia+jNdQlADOX/qGCk+GynIPF04e
+      pasvRnVA09nZSbihIdcZOIvEnBNbzAznthaY4VS+Ga6QANJ2vhkuo/PNcMtwDUUJoOObr+c+
+      X5v5/1YxCQXhEUc6wYKjEQEIjkYEIDgaEYDgaEQAgqMRAQiORgQgOBoRgOBoRACCoylKAA3N
+      m2nb0oLbV87+556lYX0LO9s2r3TeBGHFKcoK8cKBvSilGfd28dqbb2GN3uZq9wiJaVvMcBIr
+      fTNcd3+UCneaar/N+TOniY2MEXClxAwnMUOpm+HOfHZ07vOl88WkEIS1gXSCBUcjAhAcjQhA
+      cDQiAMHRiAAERyMCEByNCEBwNCIAwdGIAARHU5QAfIEglRUBUC7C4XrKgiHqaqpWOm+CsOIU
+      ZYV48613CHgyfHD8Mv/ys5/wxdmLjPXf4nJHn5jhJFb6ZrjE5DQqleKpJ3Zw7cZN+m/doKm5
+      kc5PTooZTmKlb4Y7/Pv35j4fvct+grDWkE6w4GhEAIKjEQEIjkYEIDgaEYDgaEQAgqMRAQiO
+      RgQgOBoRgOBoRACCoynKCvHM8y9R40tx4utufvy9b9PR0U2F3+LDI8dWOn+CsKIUJYDWpjAo
+      aNnkI7yukbqgh67BBK2treIGlVjpu0FPfPElQXeKND6Of5qg+/YgIa9NZ2e3uEElVvpu0IHu
+      m3OfOzvM/33FJBSERxzpBAuORgQgOBoRgOBoRACCoxEBCI5GBCA4GhGA4GhEAIKjEQEIjqao
+      meCmTW1sqPFy6VaEg8/tJRoZIJOIc/HqjZXOnyCsKEUJYP/e3SitOPXlJcrKA2D52dhaRXwy
+      LWY4iZW+Ge7S1Q4aQh527NpBxzeXiU9BwPLL7wRLzFDqZrjrl85xfUGsq72YlILwaCOdYMHR
+      iAAERyMCEByNCEBwNCIAwdGIAARHIwIQHI0IQHA0IgDB0RQ1E1wWqqGh0ksknmJHWyvd3X2U
+      uW26egdXOn+CsKIUJYDXv/sd/G6LX/7q12zY8hiPb99GOgPq1Ckxw0ms9M1w/ZEYDRVuHnv8
+      MWL9XQxYAer9GTHDScxQ6ma4U8eOzH2+UkwCQVgjSCdYcDQiAMHRiAAERyMCEByNCEBwNCIA
+      wdGIAARHIwIQHI0IQHA0xQlAKdSMz8OyLJRSWNkeD0FYoxRlhfj+j/+Cal+a9//0FX//l29z
+      tTtKsu8656/fFjOcxErfDAfGn7R79w5SysNo9w02tG6k8/BnYoZb67HNFdA9Pl8AxQyXz/u/
+      +q+5z59+WEwKYU1Q7sZ6uRF9bADdPvqwc/NQkE6wg1FP1qBPRlBtlQ87K8uPS0GF5567iQCc
+      SpkLVV+GvjqCTtoQundhWUuop2qx3m6BdWV33W/1BRBwl+YTZ42hdlajL8dAg74eRz1WtXon
+      L3OhXl2Pej4M6wO5neLlwKVQG4PY73dhPd+AagwsuuvqC2BdGWpf/fJftFA8Hgu1rgzdMWb+
+      7hpHNQdyR2xWCrfCenk9+ps4unMc1VSO9XYL6rUm0yFfBlRbJfpaHBJp7I96UHvrjNAKsOoC
+      UPV+SKQh7F/tUwszqMcrTad3dkhRg+6dgIa7NxeWfmJQ31qHvjkKPQnom0CfiWL/tgt9chBr
+      Z1VR7fZ7nqOtEn09bv6ezGAf7sV6rh6a8kWw+jVAtQ/7bBS1TZpBDwW3Qm0JzT/9Z9DX4qjH
+      VvY7UU/VQjyJ/iaev3E8jX0ptuQ8qI1BdN9E7vDrdAb7g9tY++qhMVfkqysABcprwe0JVJ3f
+      THgIS6fcXXSTUm0JoW+N547FA4wkUWVuCBSYNFoOtoegyos+f2fxfboTqPUBM3/wgKi2SvTX
+      sfwN0xnsD3uwngubSbUZVrcEBj3oqQzYGt07c7HC0vBaWG+1oL6z/t4imG0eXClQQAB9cxS1
+      dQVqgfUBrK2V6GMDZoJrMTIa3T+Jai5/sPOE/ejpDEykC2+ftrHP3UEdCM+FVlcANT4YngZm
+      bvYydXqcjHq2HvtMFG4nUN9ed/dvdFMFenAyt3mQhb41htpSYWZ2l4uQB2t/PfbRvtyZ3UXQ
+      10YeuBmknqxFf1VY3HN0jZtBgA1GZKsqAFXrQ0cmzR9D0+Bzre1m0KwHpt6PaqtEPReGOt/q
+      nb+hzDR/OsbQl0dgaAq1P5xfgC2F2lmN9UQN+qvhxY+XtNHD01C/TAMUPhfWS43Yf+qHyQJW
+      hELEU6aWCN5nZzjkQbnU3AP2bujPBlF7asFjFWeFePG1t6jxpTh04hLff3U/kZEEtQEPv/3g
+      MH6/v8ANp3Cszg/to3PbdF8CNpTDrbF7p32UYhaoXdWoLSFIa/REGgYn0QMTWC81Yn/cC7a9
+      eNpn61FNM9W8e8Ybo4GUjR5NwWQaHZ0yX2ZipkAszItLYe2tw/6kb/5+Xo6hnm9AvdCAPhkB
+      rSFchvVCA/rWOPaHPeZcavFr09fiqB1V6KFBI+7GMlSFByq96DNDkMyYdNlpLWWMcDn5s7Be
+      XId9cRhGkvNpFp53Np2arx3smQ65Ph3NvXdamWsq8P2oPbXYl2PFfY/TGfSlGOpAuDgB1FVX
+      4FKanc/sZ8fuJ9l0p5ebvTFq6+qoD4fzn+JuCzwLqjuPhQq60Sl7bn/dN4HaVY2+nbh72pWK
+      lbnMl5dI31datacKanymQGmMs3DGbGWfGMR6rQn7WH+uwWv2HjxbD0kb+w/dJpaVFo8F5W5U
+      uAwV9sOOKpQC+/ig+QKz8qJ2V6N7EybvWfdffz2M2lltmkMznT37+CDEpufPcbf7MjyNqvah
+      ftwKkxl0PAn9E+jJSXNdh3vNMbKbM0rNOzjB9DUOhNEDk9A/MX/OWTOcXnDOhUQmUU/Xmtpq
+      9jweCyxt/i38foJu07r4IjLTqrj396j7EqiW8uIEcOjwEQKuDMm05t87LhIZihH0agaiMXq6
+      u/PblJbKjwXd6EQ615U3NI3yudCKeSdhobQrEdMa68VGsBT2BzPXUERa1VYJ1T70J33zzsTs
+      /fonsb8eRj1dhz7Sm5t2T63p6H0eKXyOpA2JtKkFZu6T3hjEemU99hcRGE2Z/YJuVFO5efoX
+      yLM+GUHtrEKPJKF3wojsPu6V/X7X/LVlCVQH3Kg9NegLw7lpFYCei5k2vDIF+F5u0FnRZD8s
+      bI3uSZgmXue4iWny3aBuC7WtErUthP3pgClDqvgyoI8NFNcHGI8NERmKMTIyQsfNm4zHhxmI
+      3qOzsZBKr2nfLUB3jqM2rXJneHZC5nLMjD0/31BcutYgalMF+tOBfFtuNu2jkMyYce/ZU+6q
+      hkoP+rP7fKN21zj2J31mSn9ryOR9fxj77FB+DZOFvjxiCv+DsMi16YvDEHBDy11GaRrLUJsr
+      0CeW9uZwfS1+d8tM2I/13SbwWdi/74Y792775zGVWb1OsKrxQXQqL647xlCtqysAtavaPGlv
+      jsENMyOqtoXunqgpgLWr2nToFo6hF0CfjprZ7g3lsC0E6wOmXf4gjKZM06MpgPVGs/HL9z1g
+      4V4i+tMBrD21UO3N3eBzofbXY+2txz7ab57WSyGeNKsQs2eGlTJesgNhrD212J9H0OfuFDW6
+      tBhFL4hZMrX+wp7zsZTpCJa5ih8pWAobylHryrA/6JkL6c8jWG+3mL5ILJmfZn3AfLGHbhd/
+      Hg36aL9xJE6k59vOD0rKNr79DeUwOPngx1kqaY39p36sP2s09zCjUY9XobZXYl8cRp+Jmhpk
+      GR6t9myHvHsctTlkHqIZG/vqCPrz8cIrve6TVROACrhMH6AA+sYoqrUCfXVkZTNR5TUjJ0f7
+      c6v5tMY+FcH61jrTsZ1tWlR5UU/WmO0f34bpzP3d9KRtqufZ5X3L4TjuSdx7n5VmNIV9dgjr
+      ey2gNbp91Ny35X6AdY/D1pBpdvYl0GejuavOloHVEYDXyl/iloXuGMN6cwP6xgquSgq4sV5q
+      xD42UHh5XCyJvjqCer4BfW4I9VQdqtqLfXLQzFk8KItMOq15uhPYkxmIJ02T0LsCremMnh9I
+      8FhLb1YVoKAAvP4y0slpbHuZTljlRY8vMj0N5kl5OYZ6ts606ZaDgNt0yFqCZhw7o7FPR83Y
+      +iJPcd0+iqr3m1GXC8Pos5Or0yxbq8z26dawsz1PAG63h9btOwlV1/Hl8cPoZRCBqvPDnfwO
+      cA7to8aoVe9fcjWvtoVQj5m2o745atyBdxkxyUafjJhh2dnxfaGkyau31m/aStuT++hqvzL3
+      LqCicCvUM7WFt4X96CKaEfbJQWNZXaw2rfUturAhJx+7a7A/6jHDdpGpogv/HA8+qCCsMfKK
+      2thIjFN//APRvm7szH1U/2kN5R7YGMzbpCq8MFpgdGUhoyl01zhqd03+ti0VWC80YB0ImxGj
+      RVA7qs1iiPst9IIjyRNALDpAtK/7gQ6mT0exnqrN7RC5Z/wbRXYG9ZUR1Mbg/CJtBerpWlRr
+      BfaHPdino8Z0VgiPZSZhVno0SSgZCjY2dj2xl7/+u79l1te4+5kDfPv5Z/GWh3nnndd4cu9+
+      9uzYlp9wKoO+EkM9XTcfq/Cgx/JngBfFNkOS6mAD+CzUy+sB0H/sg5Q2/QOXKrjaX+2sQl8Z
+      WdLEiOAsCo4CVTdtpsLnZefjmzl3tYPtm5tNn7B9gIbmrQxFz9K6aycjE6m8VyPqngTWjmp0
+      c8B4fZrKjYflfl5ZN5qCiTTWu5vQXw4ZD3vWvvrcHazXm7CjU/OF3e9CbazAvtiVe9xH5fWB
+      pRwrtVcjuvU0w/E4Tc1bOXe1g7MXLhN0p2lqrOX6pQv0R0cZj8cW/Z1g+/MI1rN1ZqYw5EHf
+      GDP73Mcr6/TxQXS528wUZzsmZ7dfi6O2hYwxC7PeVH89XHjY8lF7HWGpxUrt1Yg3O7toDNn8
+      4chhALra538d+GqhBAuJJ9EDk2aKvMaHHn2AsX1bm8K/CPrqCNarTWbyzAYVLsO+sExzCIJj
+      KNgH2LKxBU+olqWsC9IX7qC2Vxp/diH1LRXb1DTqYAPq6Vrs80MyfCncN3kCaNm5n8zkKC0N
+      lXd1/N6TtMY+EzWLNlaKyBRMZlDVPuh+BDwywpojrwkUud3JntZd/PevD7Hk53bvhHnh0gqi
+      Twyi1/K6YuGhkldypuKDHDt9lSq/xV3cO48OGb0yTSzBERTsBD934CAbW+qJDUTpGIwW2kUQ
+      SoKCbYdIbIy6cg94S+uV2YKwkDwBKMtFVcBD750R+nr6HkaeBGHVyBNA275XqPemiPb1Lr0T
+      LAiPOHl9gNGhPk5c7yKetLkPB48grEnyaoCJsRFq6tfh9XrmFvr4yoKEggGUctO4vhF/WYCq
+      UL7tWRDWGnk1QGJ0lD1vv8O3XWP8/Of/SRp48+13CHgy/Obwef7qJ6/R3hmlzOPi2PGT8jvB
+      EistM1xqcpTe7k7iVQG8QBpITE2jUinaNtfRE51GZ1JMJhOLmuEAiTkpVmpmuE+OfIzP42J2
+      EePh3703t+38FycLJRGENUnBeYCDL7/LT3/6oyWZ4QRhLVBQAJOpSTZv2kpV7T1eFygIa5yC
+      AlhXW871nijfefGV1c6PIKwqBQXQ0z/MxoYgv//wo9XOjyCsKgUFYI8P0TU4ytTUPV5mJQhr
+      nIICqG3cQO/N60tbECMIa4DCK0lUgK1bW1bx3emC8HAoWMaTmSlSiRTSABJKnYI1QHw4StW6
+      DaziD34KwkMhrwbwBUK0NK9nKNo/95KFQKgan0oRi48TqqrC1hYVfov+waFVzq4gLC95AvCX
+      VxEsK8Pjnp7rBL/+5ht4SfP+R8f42T/9DadPXYHxXnxlQTHDSay0zHDxaDfv/eo/8Hi9c4vi
+      xyemKSPFvv17uHMnznBvFxtbG+g8+rmY4SRWemY4gFRy/nXm2Wa4Y4cPAfDFucVSCsLaQV6o
+      IzgaEYDgaEQAgqMRAQiORgQgOBoRgOBoRACCoxEBCI5GBCA4GhGA4GiKWvPy1o/+nAo1yS9/
+      c4h//Od/4JuL16ir8vDR/31Kc8sGTp8/k5vAu8C0JLHSjinA68r9jbZZM1w2s16g7LBbmQNY
+      WSafxcxwGZUfW+I1FCUAn9eDwuKl198gGPCxrraS6WSC2PAwd6JDueam2YuSWGnGFJBaELNm
+      CnB2zKUAKzemC5jhtAVK559XY0xx2efNLBDFMlxXUQJ4/39/gcJGa82xj38HWuFyaZLJNJOT
+      k/m/zmgjsVKN6ax/c/to8++esaxjzB1PFz5eXozCx1vidRUlgHQqmRfLyI8HCCWAdIIFRyMC
+      EByNCEBwNCIAwdGIAARHIwIQHI0IQHA0IgDB0YgABEdT1EzwgRdfpcaf5uNPv+TdH7xBX2+U
+      8WgPF660r3T+BGFFKUoATQ01aCBcU0V59Tqmv7nGcwcPMDKRklcjSqy0Xo1YiE+OnSDoTuH2
+      VnDh+BEGR6aJfvgxnb0ReTWixErz1YjZDA/eZhiAQXqKSSAIawTpBAuORgQgOBoRgOBoRACC
+      oxEBCI5GBCA4GhGA4GhEAIKjEQEIjqaomeDtu5+hxpfizOVOXnlxH909Eeor3Bw/Jb+UJ6xt
+      /h8HFKbP00MitQAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
