@@ -243,6 +243,37 @@ def get_playlist_tracks(playlist_id):
 
     return response.json()
 
+def find_average_song(
+    seed_tracks="7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ", 
+    limit = 1,
+    market="US",
+    acousticness=.5,
+    danceability=.5,
+    energy=.5,
+    instrumentalness=.5,
+    liveness = .5,
+    speechiness = .5,
+    valence=.4,
+):
+
+    url = f"""
+    https://api.spotify.com/v1/recommendations?seed_tracks={seed_tracks}&limit={limit}&market={market}&target_acousticness={acousticness}
+    """
+    access_token = get_token().get('access_token')
+    
+    headers = {
+        'Content-Type' : 'application/json',
+        'Authorization' : f'Bearer {access_token}'
+    }
+
+    response = requests.get(url, headers=headers)
+    
+    return response.json()
+
+
+
+
+
 
 
 
