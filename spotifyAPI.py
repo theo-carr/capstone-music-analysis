@@ -230,8 +230,8 @@ def new_release_features(limit = 20, offset = 0, country = "US"):
                 data.append(features)
     return data
         
-def get_playlist_tracks(playlist_id):
-    url = f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks"
+def get_playlist_tracks(playlist_id,offset):
+    url = f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks?offset={offset}"
     access_token = get_token().get('access_token')
 
     headers = {
