@@ -43,8 +43,8 @@
   <datasources>
     <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
       <aliases enabled='yes' />
-      <column caption='line_selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Valence&quot;'>
-        <calculation class='tableau' formula='&quot;Valence&quot;' />
+      <column caption='line_selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Acousticness&quot;'>
+        <calculation class='tableau' formula='&quot;Acousticness&quot;' />
         <members>
           <member value='&quot;Acousticness&quot;' />
           <member value='&quot;Danceability&quot;' />
@@ -55,8 +55,8 @@
           <member value='&quot;Valence&quot;' />
         </members>
       </column>
-      <column caption='X Variable' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Energy&quot;'>
-        <calculation class='tableau' formula='&quot;Energy&quot;' />
+      <column caption='X Variable' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Danceability&quot;'>
+        <calculation class='tableau' formula='&quot;Danceability&quot;' />
         <members>
           <member value='&quot;Acousticness&quot;' />
           <member value='&quot;Danceability&quot;' />
@@ -68,8 +68,8 @@
           <member value='&quot;Valence&quot;' />
         </members>
       </column>
-      <column caption='Y Variable' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Energy&quot;'>
-        <calculation class='tableau' formula='&quot;Energy&quot;' />
+      <column caption='Y Variable' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Acousticness&quot;'>
+        <calculation class='tableau' formula='&quot;Acousticness&quot;' />
         <members>
           <member value='&quot;Acousticness&quot;' />
           <member value='&quot;Danceability&quot;' />
@@ -694,6 +694,684 @@
         </relationships>
       </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
     </datasource>
+    <datasource caption='musicdata_clean' inline='true' name='federated.154cm6u033iwps14i09uf0rqp8p3' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='musicdata_clean' name='textscan.0dmymu90g5tb8c1h03qnl1uh5zvt'>
+            <connection class='textscan' directory='C:/Users/theoc/Documents/NSS/spotify/data' filename='musicdata_clean.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0dmymu90g5tb8c1h03qnl1uh5zvt' name='musicdata_clean.csv' table='[musicdata_clean#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='format' ordinal='0' />
+            <column datatype='string' name='metric' ordinal='1' />
+            <column datatype='date' date-parse-format='yyyy' name='year' ordinal='2' />
+            <column datatype='real' name='value_actual' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0dmymu90g5tb8c1h03qnl1uh5zvt' name='musicdata_clean.csv' table='[musicdata_clean#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='string' name='format' ordinal='0' />
+            <column datatype='string' name='metric' ordinal='1' />
+            <column datatype='date' date-parse-format='yyyy' name='year' ordinal='2' />
+            <column datatype='real' name='value_actual' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[musicdata_clean.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>format</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[format]</local-name>
+            <parent-name>[musicdata_clean.csv]</parent-name>
+            <remote-alias>format</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>metric</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[metric]</local-name>
+            <parent-name>[musicdata_clean.csv]</parent-name>
+            <remote-alias>metric</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[musicdata_clean.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>value_actual</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[value_actual]</local-name>
+            <parent-name>[musicdata_clean.csv]</parent-name>
+            <remote-alias>value_actual</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='value_millions' datatype='real' default-format='c&quot;$&quot;#,##0,,,.00B;(&quot;$&quot;#,##0,,,.00B)' name='[Calculation_1011339631695278080]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[value_actual] * 1000000' />
+      </column>
+      <column caption='metric_clean' datatype='string' name='[Calculation_569423917438959616]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [metric]== &quot;Units&quot; THEN &quot;Units (Millions)&quot;&#13;&#10;ELSEIF [metric]==&quot;Value&quot; THEN &quot;Revenue (Millions)&quot;&#13;&#10;ELSEIF [metric] == &quot;Value (Adjusted)&quot; THEN &quot;Revenue Adjusted for Inflation (Millions)&quot;&#13;&#10;END' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='musicdata_clean.csv' datatype='table' name='[__tableau_internal_object_id__].[musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF]' role='measure' type='quantitative' />
+      <column caption='Format' datatype='string' name='[format]' role='dimension' type='nominal' />
+      <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
+      <column caption='Value Actual' datatype='real' default-format='*$0,000' name='[value_actual]' role='measure' type='quantitative' />
+      <column caption='Year' datatype='date' name='[year]' role='dimension' type='quantitative' />
+      <column-instance column='[format]' derivation='None' name='[none:format:nk]' pivot='key' type='nominal' />
+      <column-instance column='[metric]' derivation='None' name='[none:metric:nk]' pivot='key' type='nominal' />
+      <group caption='Metric Set' name='[Metric Set]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+          <groupfilter function='level-members' level='[none:metric:nk]' />
+          <groupfilter function='union'>
+            <groupfilter function='member' level='[none:metric:nk]' member='&quot;Units&quot;' />
+            <groupfilter function='member' level='[none:metric:nk]' member='%null%' />
+          </groupfilter>
+        </groupfilter>
+      </group>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:format:nk]' palette='tableau20_10_0' type='palette'>
+            <map to='#24693d'>
+              <bucket>&quot;Paid Subscription&quot;</bucket>
+            </map>
+            <map to='#2a5783'>
+              <bucket>&quot;LP/EP&quot;</bucket>
+            </map>
+            <map to='#398949'>
+              <bucket>&quot;On-Demand Streaming (Ad-Supported)&quot;</bucket>
+            </map>
+            <map to='#43719f'>
+              <bucket>&quot;Vinyl Single&quot;</bucket>
+            </map>
+            <map to='#5b8cb8'>
+              <bucket>&quot;8 - Track&quot;</bucket>
+            </map>
+            <map to='#61a956'>
+              <bucket>&quot;Other Ad-Supported Streaming&quot;</bucket>
+            </map>
+            <map to='#79aacf'>
+              <bucket>&quot;Cassette&quot;</bucket>
+            </map>
+            <map to='#7c4d79'>
+              <bucket>&quot;Download Album&quot;</bucket>
+            </map>
+            <map to='#7dc370'>
+              <bucket>&quot;SoundExchange Distributions&quot;</bucket>
+            </map>
+            <map to='#9a6a96'>
+              <bucket>&quot;Download Single&quot;</bucket>
+            </map>
+            <map to='#9bc7e4'>
+              <bucket>&quot;Cassette Single&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;DVD Audio&quot;</bucket>
+            </map>
+            <map to='#b3e0a6'>
+              <bucket>&quot;Limited Tier Paid Subscription&quot;</bucket>
+            </map>
+            <map to='#b94665'>
+              <bucket>&quot;Paid Subscriptions&quot;</bucket>
+            </map>
+            <map to='#b9ddf1'>
+              <bucket>&quot;Other Tapes&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Synchronization&quot;</bucket>
+            </map>
+            <map to='#bc928e'>
+              <bucket>&quot;Kiosk&quot;</bucket>
+            </map>
+            <map to='#be89ac'>
+              <bucket>&quot;Ringtones &amp; Ringbacks&quot;</bucket>
+            </map>
+            <map to='#d5a4c4'>
+              <bucket>&quot;Download Music Video&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;CD&quot;</bucket>
+            </map>
+            <map to='#eec9e5'>
+              <bucket>&quot;Other Digital&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Music Video (Physical)&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;CD Single&quot;</bucket>
+            </map>
+            <map to='#ffc685'>
+              <bucket>&quot;SACD&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='format' />
+        <field-sort-custom-order field='metric' />
+        <field-sort-custom-order field='Calculation_569423917438959616' />
+        <field-sort-custom-order field='year' />
+        <field-sort-custom-order field='value_actual' />
+        <field-sort-custom-order field='Calculation_1011339631695278080' />
+      </field-sort-info>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='musicdata_clean.csv' id='musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF'>
+            <properties context=''>
+              <relation connection='textscan.0dmymu90g5tb8c1h03qnl1uh5zvt' name='musicdata_clean.csv' table='[musicdata_clean#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='format' ordinal='0' />
+                  <column datatype='string' name='metric' ordinal='1' />
+                  <column datatype='date' date-parse-format='yyyy' name='year' ordinal='2' />
+                  <column datatype='real' name='value_actual' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource caption='topsongs_combined' inline='true' name='federated.04xnwhm09ad04a0zrpitz1ui6bpy' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='topsongs_combined' name='textscan.0m5mrra0vaphan1308oo20vom31k'>
+            <connection class='textscan' directory='C:/Users/theoc/Documents/NSS/spotify/data' filename='topsongs_combined.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0m5mrra0vaphan1308oo20vom31k' name='topsongs_combined.csv' table='[topsongs_combined#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='real' name='danceability' ordinal='0' />
+            <column datatype='real' name='energy' ordinal='1' />
+            <column datatype='integer' name='key' ordinal='2' />
+            <column datatype='real' name='loudness' ordinal='3' />
+            <column datatype='integer' name='mode' ordinal='4' />
+            <column datatype='real' name='speechiness' ordinal='5' />
+            <column datatype='real' name='acousticness' ordinal='6' />
+            <column datatype='real' name='instrumentalness' ordinal='7' />
+            <column datatype='real' name='liveness' ordinal='8' />
+            <column datatype='real' name='valence' ordinal='9' />
+            <column datatype='real' name='tempo' ordinal='10' />
+            <column datatype='string' name='type' ordinal='11' />
+            <column datatype='string' name='id' ordinal='12' />
+            <column datatype='string' name='uri' ordinal='13' />
+            <column datatype='string' name='track_href' ordinal='14' />
+            <column datatype='string' name='analysis_url' ordinal='15' />
+            <column datatype='integer' name='duration_ms' ordinal='16' />
+            <column datatype='integer' name='time_signature' ordinal='17' />
+            <column datatype='integer' name='rank' ordinal='18' />
+            <column datatype='string' name='artist' ordinal='19' />
+            <column datatype='string' name='song' ordinal='20' />
+            <column datatype='string' name='album' ordinal='21' />
+            <column datatype='string' name='release_date' ordinal='22' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0m5mrra0vaphan1308oo20vom31k' name='topsongs_combined.csv' table='[topsongs_combined#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='real' name='danceability' ordinal='0' />
+            <column datatype='real' name='energy' ordinal='1' />
+            <column datatype='integer' name='key' ordinal='2' />
+            <column datatype='real' name='loudness' ordinal='3' />
+            <column datatype='integer' name='mode' ordinal='4' />
+            <column datatype='real' name='speechiness' ordinal='5' />
+            <column datatype='real' name='acousticness' ordinal='6' />
+            <column datatype='real' name='instrumentalness' ordinal='7' />
+            <column datatype='real' name='liveness' ordinal='8' />
+            <column datatype='real' name='valence' ordinal='9' />
+            <column datatype='real' name='tempo' ordinal='10' />
+            <column datatype='string' name='type' ordinal='11' />
+            <column datatype='string' name='id' ordinal='12' />
+            <column datatype='string' name='uri' ordinal='13' />
+            <column datatype='string' name='track_href' ordinal='14' />
+            <column datatype='string' name='analysis_url' ordinal='15' />
+            <column datatype='integer' name='duration_ms' ordinal='16' />
+            <column datatype='integer' name='time_signature' ordinal='17' />
+            <column datatype='integer' name='rank' ordinal='18' />
+            <column datatype='string' name='artist' ordinal='19' />
+            <column datatype='string' name='song' ordinal='20' />
+            <column datatype='string' name='album' ordinal='21' />
+            <column datatype='string' name='release_date' ordinal='22' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>danceability</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[danceability]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>danceability</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>energy</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[energy]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>energy</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>key</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[key]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>key</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>loudness</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[loudness]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>loudness</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>mode</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[mode]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>mode</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>speechiness</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[speechiness]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>speechiness</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>acousticness</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[acousticness]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>acousticness</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>instrumentalness</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[instrumentalness]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>instrumentalness</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>liveness</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[liveness]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>liveness</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>valence</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[valence]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>valence</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tempo</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[tempo]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>tempo</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[type]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>type</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>uri</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[uri]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>uri</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>track_href</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[track_href]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>track_href</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>analysis_url</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[analysis_url]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>analysis_url</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>duration_ms</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[duration_ms]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>duration_ms</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time_signature</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[time_signature]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>time_signature</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[rank]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>rank</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>artist</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[artist]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>artist</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>song</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[song]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>song</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>album</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[album]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>album</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>release_date</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[release_date]</local-name>
+            <parent-name>[topsongs_combined.csv]</parent-name>
+            <remote-alias>release_date</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='None' datatype='integer' name='[Acousticness (bin)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='-2' formula='[acousticness]' peg='0' size='0.0631' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='topsongs_combined.csv' datatype='table' name='[__tableau_internal_object_id__].[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]' role='measure' type='quantitative' />
+      <column caption='Acousticness' datatype='real' name='[acousticness]' role='measure' type='quantitative' />
+      <column caption='Album' datatype='string' name='[album]' role='dimension' type='nominal' />
+      <column caption='Analysis Url' datatype='string' name='[analysis_url]' role='dimension' type='nominal' />
+      <column caption='Artist' datatype='string' name='[artist]' role='dimension' type='nominal' />
+      <column caption='Danceability' datatype='real' name='[danceability]' role='measure' type='quantitative' />
+      <column caption='Duration Ms' datatype='integer' name='[duration_ms]' role='measure' type='quantitative' />
+      <column caption='Energy' datatype='real' name='[energy]' role='measure' type='quantitative' />
+      <column caption='Id' datatype='string' name='[id]' role='dimension' type='nominal' />
+      <column caption='Instrumentalness' datatype='real' name='[instrumentalness]' role='measure' type='quantitative' />
+      <column caption='Key' datatype='integer' name='[key]' role='dimension' type='ordinal' />
+      <column caption='Liveness' datatype='real' name='[liveness]' role='measure' type='quantitative' />
+      <column caption='Loudness' datatype='real' name='[loudness]' role='measure' type='quantitative' />
+      <column caption='Mode' datatype='integer' name='[mode]' role='measure' type='quantitative' />
+      <column caption='Rank' datatype='integer' name='[rank]' role='measure' type='quantitative' />
+      <column caption='Release Date' datatype='string' name='[release_date]' role='dimension' type='nominal' />
+      <column caption='Song' datatype='string' name='[song]' role='dimension' type='nominal' />
+      <column caption='Speechiness' datatype='real' name='[speechiness]' role='measure' type='quantitative' />
+      <column caption='Tempo' datatype='real' name='[tempo]' role='measure' type='quantitative' />
+      <column caption='Time Signature' datatype='integer' name='[time_signature]' role='measure' type='quantitative' />
+      <column caption='Track Href' datatype='string' name='[track_href]' role='dimension' type='nominal' />
+      <column caption='Type' datatype='string' name='[type]' role='dimension' type='nominal' />
+      <column caption='Uri' datatype='string' name='[uri]' role='dimension' type='nominal' />
+      <column caption='Valence' datatype='real' name='[valence]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='topsongs_combined.csv' id='topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263'>
+            <properties context=''>
+              <relation connection='textscan.0m5mrra0vaphan1308oo20vom31k' name='topsongs_combined.csv' table='[topsongs_combined#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='real' name='danceability' ordinal='0' />
+                  <column datatype='real' name='energy' ordinal='1' />
+                  <column datatype='integer' name='key' ordinal='2' />
+                  <column datatype='real' name='loudness' ordinal='3' />
+                  <column datatype='integer' name='mode' ordinal='4' />
+                  <column datatype='real' name='speechiness' ordinal='5' />
+                  <column datatype='real' name='acousticness' ordinal='6' />
+                  <column datatype='real' name='instrumentalness' ordinal='7' />
+                  <column datatype='real' name='liveness' ordinal='8' />
+                  <column datatype='real' name='valence' ordinal='9' />
+                  <column datatype='real' name='tempo' ordinal='10' />
+                  <column datatype='string' name='type' ordinal='11' />
+                  <column datatype='string' name='id' ordinal='12' />
+                  <column datatype='string' name='uri' ordinal='13' />
+                  <column datatype='string' name='track_href' ordinal='14' />
+                  <column datatype='string' name='analysis_url' ordinal='15' />
+                  <column datatype='integer' name='duration_ms' ordinal='16' />
+                  <column datatype='integer' name='time_signature' ordinal='17' />
+                  <column datatype='integer' name='rank' ordinal='18' />
+                  <column datatype='string' name='artist' ordinal='19' />
+                  <column datatype='string' name='song' ordinal='20' />
+                  <column datatype='string' name='album' ordinal='21' />
+                  <column datatype='string' name='release_date' ordinal='22' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
     <datasource caption='all_charts_nondup' inline='true' name='federated.07gz19p0mtp7dx170vfiv0s5ub1g' version='18.1'>
       <connection class='federated'>
         <named-connections>
@@ -775,6 +1453,14 @@
               <column datatype='real' name='value' ordinal='2' />
             </columns>
           </relation>
+          <relation connection='textscan.12j1a8e0rl14o91cf9umo07jrwvv' name='musicdata_clean.csv' table='[musicdata_clean#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='format' ordinal='0' />
+              <column datatype='string' name='metric' ordinal='1' />
+              <column datatype='date' date-parse-format='yyyy' name='year' ordinal='2' />
+              <column datatype='real' name='value_actual' ordinal='3' />
+            </columns>
+          </relation>
         </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
         <cols>
           <map key='[Unnamed: 0]' value='[af_charts_combined.csv].[Unnamed: 0]' />
@@ -786,12 +1472,14 @@
           <map key='[duration_ms]' value='[af_charts_combined.csv].[duration_ms]' />
           <map key='[energy]' value='[af_charts_combined.csv].[energy]' />
           <map key='[error]' value='[af_charts_combined.csv].[error]' />
+          <map key='[format]' value='[musicdata_clean.csv].[format]' />
           <map key='[id]' value='[af_charts_combined.csv].[id]' />
           <map key='[instrumentalness]' value='[af_charts_combined.csv].[instrumentalness]' />
           <map key='[key]' value='[af_charts_combined.csv].[key]' />
           <map key='[last-week]' value='[af_charts_combined.csv].[last-week]' />
           <map key='[liveness]' value='[af_charts_combined.csv].[liveness]' />
           <map key='[loudness]' value='[af_charts_combined.csv].[loudness]' />
+          <map key='[metric]' value='[musicdata_clean.csv].[metric]' />
           <map key='[mode]' value='[af_charts_combined.csv].[mode]' />
           <map key='[peak-rank]' value='[af_charts_combined.csv].[peak-rank]' />
           <map key='[rank]' value='[af_charts_combined.csv].[rank]' />
@@ -807,8 +1495,10 @@
           <map key='[uri]' value='[af_charts_combined.csv].[uri]' />
           <map key='[valence]' value='[af_charts_combined.csv].[valence]' />
           <map key='[value]' value='[af_melted.csv].[value]' />
+          <map key='[value_actual]' value='[musicdata_clean.csv].[value_actual]' />
           <map key='[variable]' value='[af_melted.csv].[variable]' />
           <map key='[weeks-on-board]' value='[af_charts_combined.csv].[weeks-on-board]' />
+          <map key='[year]' value='[musicdata_clean.csv].[year]' />
         </cols>
         <metadata-records>
           <metadata-record class='capability'>
@@ -831,6 +1521,22 @@
             <remote-name />
             <remote-type>0</remote-type>
             <parent-name>[af_melted.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[musicdata_clean.csv]</parent-name>
             <remote-alias />
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -1264,9 +1970,67 @@
             <contains-null>true</contains-null>
             <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[af_melted.csv_B1A1567285F34996A7F46A9C5592C97B]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>format</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[format]</local-name>
+            <parent-name>[musicdata_clean.csv]</parent-name>
+            <remote-alias>format</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[musicdata_clean.csv_40B50A435F73483B8D651B3326AC597E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>metric</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[metric]</local-name>
+            <parent-name>[musicdata_clean.csv]</parent-name>
+            <remote-alias>metric</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[musicdata_clean.csv_40B50A435F73483B8D651B3326AC597E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[musicdata_clean.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[musicdata_clean.csv_40B50A435F73483B8D651B3326AC597E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>value_actual</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[value_actual]</local-name>
+            <parent-name>[musicdata_clean.csv]</parent-name>
+            <remote-alias>value_actual</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[musicdata_clean.csv_40B50A435F73483B8D651B3326AC597E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
+      <column caption='the_real_sales_year' datatype='date' datatype-customized='true' name='[Calculation_1106478174869782528]' role='dimension' type='quantitative'>
+        <calculation class='tableau' formula='DATE(DATEPARSE ( &quot;yyyy&quot;, STR(YEAR([year])) )) ' />
+      </column>
       <column caption='INDEX' datatype='integer' name='[Calculation_1139129270734618625]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='INDEX()'>
           <table-calc ordering-type='Rows' />
@@ -1282,6 +2046,9 @@
       </column>
       <column caption='NULL' datatype='integer' name='[Calculation_1139129270767722502]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='IF FALSE THEN 0 ELSE NULL END' />
+      </column>
+      <column caption='metric_clean' datatype='string' name='[Calculation_1197113117266665473]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [metric]== &quot;Units&quot; THEN &quot;Units (Millions)&quot;&#13;&#10;ELSEIF [metric]==&quot;Value&quot; THEN &quot;Revenue (Millions)&quot;&#13;&#10;ELSEIF [metric] == &quot;Value(Adjusted)&quot; THEN &quot;Revenue Adjusted for Inflation (Millions)&quot;&#13;&#10;END' />
       </column>
       <column caption='key_string' datatype='string' name='[Calculation_569423917448785921]' role='dimension' type='nominal'>
         <calculation class='tableau' formula='IF [key] == 0.00 THEN &quot;C&quot;&#13;&#10;ELSEIF [key] == 1.00 THEN &quot;C#/D♭&quot;&#13;&#10;ELSEIF [key] == 2.00 THEN &quot;D&quot;&#13;&#10;ELSEIF [key] == 3.00 THEN &quot;D#/E♭&quot;&#13;&#10;ELSEIF [key] == 4.00 THEN &quot;E&quot;&#13;&#10;ELSEIF [key] == 5.00 THEN &quot;F&quot;&#13;&#10;ELSEIF [key] == 6.00 THEN &quot;F#/G♭&quot;&#13;&#10;ELSEIF [key] == 7.00 THEN &quot;G&quot;&#13;&#10;ELSEIF [key] == 8.00 THEN &quot;G#/A♭&quot;&#13;&#10;ELSEIF [key] == 9.00 THEN &quot;A&quot;&#13;&#10;ELSEIF [key] == 10.00 THEN &quot;A#/B♭&quot;&#13;&#10;ELSEIF [key] == 11.00 THEN &quot;B&quot;&#13;&#10;ELSE &quot;No Key Detected&quot;&#13;&#10;END' />
@@ -1318,6 +2085,7 @@
       </column>
       <_.fcp.ObjectModelTableType.true...column caption='af_charts_combined.csv' datatype='table' name='[__tableau_internal_object_id__].[af_charts_combined.csv_56B1A0C6A47C4A39BF2E8B8EEA0FF01A]' role='measure' type='quantitative' />
       <_.fcp.ObjectModelTableType.true...column caption='af_melted.csv' datatype='table' name='[__tableau_internal_object_id__].[af_melted.csv_B1A1567285F34996A7F46A9C5592C97B]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='musicdata_clean.csv' datatype='table' name='[__tableau_internal_object_id__].[musicdata_clean.csv_40B50A435F73483B8D651B3326AC597E]' role='measure' type='quantitative' />
       <column caption='Acousticness' datatype='real' name='[acousticness]' role='measure' type='quantitative' />
       <column caption='Analysis Url' datatype='string' name='[analysis_url]' role='dimension' type='nominal' />
       <column caption='Artist' datatype='string' name='[artist]' role='dimension' type='nominal' />
@@ -1329,6 +2097,7 @@
       </column>
       <column caption='Energy' datatype='real' name='[energy]' role='measure' type='quantitative' />
       <column caption='Error' datatype='string' name='[error]' role='dimension' type='nominal' />
+      <column caption='Format' datatype='string' name='[format]' role='dimension' type='nominal' />
       <column caption='Id' datatype='string' name='[id]' role='dimension' type='nominal' />
       <column caption='Instrumentalness' datatype='real' name='[instrumentalness]' role='measure' type='quantitative' />
       <column caption='Key' datatype='real' name='[key]' role='dimension' type='ordinal' />
@@ -1338,6 +2107,13 @@
       </column>
       <column caption='Liveness' datatype='real' name='[liveness]' role='measure' type='quantitative' />
       <column caption='Loudness' datatype='real' name='[loudness]' role='measure' type='quantitative' />
+      <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;Units&quot;' value='Units (Millions)' />
+          <alias key='&quot;Value&quot;' value='Total Value (Millions)' />
+          <alias key='&quot;Value (Adjusted)&quot;' value='Total Value(Adjusted for Inflation)' />
+        </aliases>
+      </column>
       <column aggregation='Sum' caption='Mode' datatype='real' name='[mode]' role='dimension' type='ordinal' />
       <column caption='Peak-Rank' datatype='integer' name='[peak-rank]' role='measure' type='quantitative' />
       <column aggregation='Sum' caption='Rank' datatype='integer' name='[rank]' role='dimension' type='ordinal' />
@@ -1353,8 +2129,10 @@
       <column caption='Uri' datatype='string' name='[uri]' role='dimension' type='nominal' />
       <column caption='Valence' datatype='real' name='[valence]' role='measure' type='quantitative' />
       <column caption='Value' datatype='real' name='[value]' role='measure' type='quantitative' />
+      <column caption='Value Actual' datatype='real' name='[value_actual]' role='measure' type='quantitative' />
       <column caption='Variable' datatype='string' name='[variable]' role='dimension' type='nominal' />
       <column caption='Weeks-On-Board' datatype='integer' name='[weeks-on-board]' role='measure' type='quantitative' />
+      <column caption='Year' datatype='date' name='[year]' role='dimension' type='quantitative' />
       <column-instance column='[acousticness]' derivation='Avg' name='[avg:acousticness:qk]' pivot='key' type='quantitative' />
       <column-instance column='[danceability]' derivation='Avg' name='[avg:danceability:qk]' pivot='key' type='quantitative' />
       <column-instance column='[energy]' derivation='Avg' name='[avg:energy:qk]' pivot='key' type='quantitative' />
@@ -1362,6 +2140,7 @@
       <column-instance column='[loudness]' derivation='Avg' name='[avg:loudness:qk]' pivot='key' type='quantitative' />
       <column-instance column='[Calculation_569423917457498115]' derivation='None' name='[none:Calculation_569423917457498115:nk]' pivot='key' type='nominal' />
       <column-instance column='[artist]' derivation='None' name='[none:artist:nk]' pivot='key' type='nominal' />
+      <column-instance column='[format]' derivation='None' name='[none:format:nk]' pivot='key' type='nominal' />
       <column-instance column='[song]' derivation='None' name='[none:song:nk]' pivot='key' type='nominal' />
       <column-instance column='[acousticness]' derivation='Sum' name='[sum:acousticness:qk]' pivot='key' type='quantitative' />
       <column-instance column='[danceability]' derivation='Sum' name='[sum:danceability:qk]' pivot='key' type='quantitative' />
@@ -1396,7 +2175,7 @@
           <groupfilter function='level-members' level='[tyr:release_year:ok]' />
         </groupfilter>
       </group>
-      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-aliased-fields='true' show-structure='true' />
       <style>
         <style-rule element='mark'>
           <encoding attr='color' field='[:Measure Names]' type='palette'>
@@ -2241,6 +3020,80 @@
               <bucket>&quot;Major&quot;</bucket>
             </map>
           </encoding>
+          <encoding attr='color' field='[none:format:nk]' type='palette'>
+            <map to='#24693d'>
+              <bucket>&quot;Paid Subscription&quot;</bucket>
+            </map>
+            <map to='#2a5783'>
+              <bucket>&quot;LP/EP&quot;</bucket>
+            </map>
+            <map to='#398949'>
+              <bucket>&quot;On-Demand Streaming (Ad-Supported)&quot;</bucket>
+            </map>
+            <map to='#43719f'>
+              <bucket>&quot;Vinyl Single&quot;</bucket>
+            </map>
+            <map to='#5b8cb8'>
+              <bucket>&quot;8 - Track&quot;</bucket>
+            </map>
+            <map to='#61a956'>
+              <bucket>&quot;Other Ad-Supported Streaming&quot;</bucket>
+            </map>
+            <map to='#79aacf'>
+              <bucket>&quot;Cassette&quot;</bucket>
+            </map>
+            <map to='#7c4d79'>
+              <bucket>&quot;Download Album&quot;</bucket>
+            </map>
+            <map to='#7dc370'>
+              <bucket>&quot;SoundExchange Distributions&quot;</bucket>
+            </map>
+            <map to='#9a6a96'>
+              <bucket>&quot;Download Single&quot;</bucket>
+            </map>
+            <map to='#9bc7e4'>
+              <bucket>&quot;Cassette Single&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;DVD Audio&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Paid Subscriptions&quot;</bucket>
+            </map>
+            <map to='#b3e0a6'>
+              <bucket>&quot;Limited Tier Paid Subscription&quot;</bucket>
+            </map>
+            <map to='#b9ddf1'>
+              <bucket>&quot;Other Tapes&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Synchronization&quot;</bucket>
+            </map>
+            <map to='#be89ac'>
+              <bucket>&quot;Ringtones &amp; Ringbacks&quot;</bucket>
+            </map>
+            <map to='#d5a4c4'>
+              <bucket>&quot;Download Music Video&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Kiosk&quot;</bucket>
+            </map>
+            <map to='#ee7422'>
+              <bucket>&quot;CD&quot;</bucket>
+            </map>
+            <map to='#eec9e5'>
+              <bucket>&quot;Other Digital&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Music Video (Physical)&quot;</bucket>
+            </map>
+            <map to='#f59c3c'>
+              <bucket>&quot;CD Single&quot;</bucket>
+            </map>
+            <map to='#ffc685'>
+              <bucket>&quot;SACD&quot;</bucket>
+            </map>
+          </encoding>
         </style-rule>
       </style>
       <semantic-values>
@@ -2290,14 +3143,14 @@
         <field-sort-custom-order field='Calculation_908319789042429953' />
       </field-sort-info>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='line_selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Valence&quot;'>
-          <calculation class='tableau' formula='&quot;Valence&quot;' />
+        <column caption='line_selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Acousticness&quot;'>
+          <calculation class='tableau' formula='&quot;Acousticness&quot;' />
         </column>
-        <column caption='X Variable' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Energy&quot;'>
-          <calculation class='tableau' formula='&quot;Energy&quot;' />
+        <column caption='X Variable' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Danceability&quot;'>
+          <calculation class='tableau' formula='&quot;Danceability&quot;' />
         </column>
-        <column caption='Y Variable' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Energy&quot;'>
-          <calculation class='tableau' formula='&quot;Energy&quot;' />
+        <column caption='Y Variable' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Acousticness&quot;'>
+          <calculation class='tableau' formula='&quot;Acousticness&quot;' />
         </column>
       </datasource-dependencies>
       <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
@@ -2350,234 +3203,9 @@
               </relation>
             </properties>
           </object>
-        </objects>
-        <relationships>
-          <relationship>
-            <expression op='='>
-              <expression op='[release_year]' />
-              <expression op='[release_year (af_melted.csv)]' />
-            </expression>
-            <first-end-point object-id='af_charts_combined.csv_56B1A0C6A47C4A39BF2E8B8EEA0FF01A' />
-            <second-end-point object-id='af_melted.csv_B1A1567285F34996A7F46A9C5592C97B' />
-          </relationship>
-        </relationships>
-      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
-    </datasource>
-    <datasource caption='musicdata_clean' inline='true' name='federated.154cm6u033iwps14i09uf0rqp8p3' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='musicdata_clean' name='textscan.0dmymu90g5tb8c1h03qnl1uh5zvt'>
-            <connection class='textscan' directory='C:/Users/theoc/Documents/NSS/spotify/data' filename='musicdata_clean.csv' password='' server='' />
-          </named-connection>
-        </named-connections>
-        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0dmymu90g5tb8c1h03qnl1uh5zvt' name='musicdata_clean.csv' table='[musicdata_clean#csv]' type='table'>
-          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-            <column datatype='string' name='format' ordinal='0' />
-            <column datatype='string' name='metric' ordinal='1' />
-            <column datatype='date' date-parse-format='yyyy' name='year' ordinal='2' />
-            <column datatype='real' name='value_actual' ordinal='3' />
-          </columns>
-        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
-        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0dmymu90g5tb8c1h03qnl1uh5zvt' name='musicdata_clean.csv' table='[musicdata_clean#csv]' type='table'>
-          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-            <column datatype='string' name='format' ordinal='0' />
-            <column datatype='string' name='metric' ordinal='1' />
-            <column datatype='date' date-parse-format='yyyy' name='year' ordinal='2' />
-            <column datatype='real' name='value_actual' ordinal='3' />
-          </columns>
-        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
-        <metadata-records>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[musicdata_clean.csv]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
-              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
-              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
-              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
-              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
-              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>format</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[format]</local-name>
-            <parent-name>[musicdata_clean.csv]</parent-name>
-            <remote-alias>format</remote-alias>
-            <ordinal>0</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>metric</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[metric]</local-name>
-            <parent-name>[musicdata_clean.csv]</parent-name>
-            <remote-alias>metric</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>year</remote-name>
-            <remote-type>7</remote-type>
-            <local-name>[year]</local-name>
-            <parent-name>[musicdata_clean.csv]</parent-name>
-            <remote-alias>year</remote-alias>
-            <ordinal>2</ordinal>
-            <local-type>date</local-type>
-            <aggregation>Year</aggregation>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>value_actual</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[value_actual]</local-name>
-            <parent-name>[musicdata_clean.csv]</parent-name>
-            <remote-alias>value_actual</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-        </metadata-records>
-      </connection>
-      <aliases enabled='yes' />
-      <column caption='value_millions' datatype='real' default-format='c&quot;$&quot;#,##0,,,.00B;(&quot;$&quot;#,##0,,,.00B)' name='[Calculation_1011339631695278080]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='[value_actual] * 1000000' />
-      </column>
-      <column caption='metric_clean' datatype='string' name='[Calculation_569423917438959616]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='IF [metric]== &quot;Units&quot; THEN &quot;Units (Millions)&quot;&#13;&#10;ELSEIF [metric]==&quot;Value&quot; THEN &quot;Revenue (Millions)&quot;&#13;&#10;ELSEIF [metric] == &quot;Value (Adjusted)&quot; THEN &quot;Revenue Adjusted for Inflation (Millions)&quot;&#13;&#10;END' />
-      </column>
-      <_.fcp.ObjectModelTableType.true...column caption='musicdata_clean.csv' datatype='table' name='[__tableau_internal_object_id__].[musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF]' role='measure' type='quantitative' />
-      <column caption='Format' datatype='string' name='[format]' role='dimension' type='nominal' />
-      <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
-      <column caption='Value Actual' datatype='real' default-format='*$0,000' name='[value_actual]' role='measure' type='quantitative' />
-      <column caption='Year' datatype='date' name='[year]' role='dimension' type='quantitative' />
-      <column-instance column='[format]' derivation='None' name='[none:format:nk]' pivot='key' type='nominal' />
-      <column-instance column='[metric]' derivation='None' name='[none:metric:nk]' pivot='key' type='nominal' />
-      <group caption='Metric Set' name='[Metric Set]' name-style='unqualified' user:ui-builder='filter-group'>
-        <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
-          <groupfilter function='level-members' level='[none:metric:nk]' />
-          <groupfilter function='union'>
-            <groupfilter function='member' level='[none:metric:nk]' member='&quot;Units&quot;' />
-            <groupfilter function='member' level='[none:metric:nk]' member='%null%' />
-          </groupfilter>
-        </groupfilter>
-      </group>
-      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
-      <style>
-        <style-rule element='mark'>
-          <encoding attr='color' field='[none:format:nk]' palette='tableau20_10_0' type='palette'>
-            <map to='#24693d'>
-              <bucket>&quot;Paid Subscription&quot;</bucket>
-            </map>
-            <map to='#2a5783'>
-              <bucket>&quot;LP/EP&quot;</bucket>
-            </map>
-            <map to='#398949'>
-              <bucket>&quot;On-Demand Streaming (Ad-Supported)&quot;</bucket>
-            </map>
-            <map to='#43719f'>
-              <bucket>&quot;Vinyl Single&quot;</bucket>
-            </map>
-            <map to='#5b8cb8'>
-              <bucket>&quot;8 - Track&quot;</bucket>
-            </map>
-            <map to='#61a956'>
-              <bucket>&quot;Other Ad-Supported Streaming&quot;</bucket>
-            </map>
-            <map to='#79aacf'>
-              <bucket>&quot;Cassette&quot;</bucket>
-            </map>
-            <map to='#7c4d79'>
-              <bucket>&quot;Download Album&quot;</bucket>
-            </map>
-            <map to='#7dc370'>
-              <bucket>&quot;SoundExchange Distributions&quot;</bucket>
-            </map>
-            <map to='#9a6a96'>
-              <bucket>&quot;Download Single&quot;</bucket>
-            </map>
-            <map to='#9bc7e4'>
-              <bucket>&quot;Cassette Single&quot;</bucket>
-            </map>
-            <map to='#9d7660'>
-              <bucket>&quot;DVD Audio&quot;</bucket>
-            </map>
-            <map to='#b3e0a6'>
-              <bucket>&quot;Limited Tier Paid Subscription&quot;</bucket>
-            </map>
-            <map to='#b94665'>
-              <bucket>&quot;Paid Subscriptions&quot;</bucket>
-            </map>
-            <map to='#b9ddf1'>
-              <bucket>&quot;Other Tapes&quot;</bucket>
-            </map>
-            <map to='#bab0ac'>
-              <bucket>&quot;Synchronization&quot;</bucket>
-            </map>
-            <map to='#bc928e'>
-              <bucket>&quot;Kiosk&quot;</bucket>
-            </map>
-            <map to='#be89ac'>
-              <bucket>&quot;Ringtones &amp; Ringbacks&quot;</bucket>
-            </map>
-            <map to='#d5a4c4'>
-              <bucket>&quot;Download Music Video&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;CD&quot;</bucket>
-            </map>
-            <map to='#eec9e5'>
-              <bucket>&quot;Other Digital&quot;</bucket>
-            </map>
-            <map to='#f1ce63'>
-              <bucket>&quot;Music Video (Physical)&quot;</bucket>
-            </map>
-            <map to='#ff9d9a'>
-              <bucket>&quot;CD Single&quot;</bucket>
-            </map>
-            <map to='#ffc685'>
-              <bucket>&quot;SACD&quot;</bucket>
-            </map>
-          </encoding>
-        </style-rule>
-      </style>
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
-      </semantic-values>
-      <field-sort-info field-sort-order-type='custom-order'>
-        <field-sort-custom-order field='format' />
-        <field-sort-custom-order field='metric' />
-        <field-sort-custom-order field='Calculation_569423917438959616' />
-        <field-sort-custom-order field='year' />
-        <field-sort-custom-order field='value_actual' />
-        <field-sort-custom-order field='Calculation_1011339631695278080' />
-      </field-sort-info>
-      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
-        <objects>
-          <object caption='musicdata_clean.csv' id='musicdata_clean.csv_ECD54E569EA448138928529CCD75EBDF'>
+          <object caption='musicdata_clean.csv' id='musicdata_clean.csv_40B50A435F73483B8D651B3326AC597E'>
             <properties context=''>
-              <relation connection='textscan.0dmymu90g5tb8c1h03qnl1uh5zvt' name='musicdata_clean.csv' table='[musicdata_clean#csv]' type='table'>
+              <relation connection='textscan.12j1a8e0rl14o91cf9umo07jrwvv' name='musicdata_clean.csv' table='[musicdata_clean#csv]' type='table'>
                 <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
                   <column datatype='string' name='format' ordinal='0' />
                   <column datatype='string' name='metric' ordinal='1' />
@@ -2588,469 +3216,28 @@
             </properties>
           </object>
         </objects>
-      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
-    </datasource>
-    <datasource caption='topsongs_combined' inline='true' name='federated.04xnwhm09ad04a0zrpitz1ui6bpy' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='topsongs_combined' name='textscan.0m5mrra0vaphan1308oo20vom31k'>
-            <connection class='textscan' directory='C:/Users/theoc/Documents/NSS/spotify/data' filename='topsongs_combined.csv' password='' server='' />
-          </named-connection>
-        </named-connections>
-        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0m5mrra0vaphan1308oo20vom31k' name='topsongs_combined.csv' table='[topsongs_combined#csv]' type='table'>
-          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-            <column datatype='real' name='danceability' ordinal='0' />
-            <column datatype='real' name='energy' ordinal='1' />
-            <column datatype='integer' name='key' ordinal='2' />
-            <column datatype='real' name='loudness' ordinal='3' />
-            <column datatype='integer' name='mode' ordinal='4' />
-            <column datatype='real' name='speechiness' ordinal='5' />
-            <column datatype='real' name='acousticness' ordinal='6' />
-            <column datatype='real' name='instrumentalness' ordinal='7' />
-            <column datatype='real' name='liveness' ordinal='8' />
-            <column datatype='real' name='valence' ordinal='9' />
-            <column datatype='real' name='tempo' ordinal='10' />
-            <column datatype='string' name='type' ordinal='11' />
-            <column datatype='string' name='id' ordinal='12' />
-            <column datatype='string' name='uri' ordinal='13' />
-            <column datatype='string' name='track_href' ordinal='14' />
-            <column datatype='string' name='analysis_url' ordinal='15' />
-            <column datatype='integer' name='duration_ms' ordinal='16' />
-            <column datatype='integer' name='time_signature' ordinal='17' />
-            <column datatype='integer' name='rank' ordinal='18' />
-            <column datatype='string' name='artist' ordinal='19' />
-            <column datatype='string' name='song' ordinal='20' />
-            <column datatype='string' name='album' ordinal='21' />
-            <column datatype='string' name='release_date' ordinal='22' />
-          </columns>
-        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
-        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0m5mrra0vaphan1308oo20vom31k' name='topsongs_combined.csv' table='[topsongs_combined#csv]' type='table'>
-          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-            <column datatype='real' name='danceability' ordinal='0' />
-            <column datatype='real' name='energy' ordinal='1' />
-            <column datatype='integer' name='key' ordinal='2' />
-            <column datatype='real' name='loudness' ordinal='3' />
-            <column datatype='integer' name='mode' ordinal='4' />
-            <column datatype='real' name='speechiness' ordinal='5' />
-            <column datatype='real' name='acousticness' ordinal='6' />
-            <column datatype='real' name='instrumentalness' ordinal='7' />
-            <column datatype='real' name='liveness' ordinal='8' />
-            <column datatype='real' name='valence' ordinal='9' />
-            <column datatype='real' name='tempo' ordinal='10' />
-            <column datatype='string' name='type' ordinal='11' />
-            <column datatype='string' name='id' ordinal='12' />
-            <column datatype='string' name='uri' ordinal='13' />
-            <column datatype='string' name='track_href' ordinal='14' />
-            <column datatype='string' name='analysis_url' ordinal='15' />
-            <column datatype='integer' name='duration_ms' ordinal='16' />
-            <column datatype='integer' name='time_signature' ordinal='17' />
-            <column datatype='integer' name='rank' ordinal='18' />
-            <column datatype='string' name='artist' ordinal='19' />
-            <column datatype='string' name='song' ordinal='20' />
-            <column datatype='string' name='album' ordinal='21' />
-            <column datatype='string' name='release_date' ordinal='22' />
-          </columns>
-        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
-        <metadata-records>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
-              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
-              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
-              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
-              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
-              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>danceability</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[danceability]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>danceability</remote-alias>
-            <ordinal>0</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>energy</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[energy]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>energy</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>key</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[key]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>key</remote-alias>
-            <ordinal>2</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>loudness</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[loudness]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>loudness</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>mode</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[mode]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>mode</remote-alias>
-            <ordinal>4</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>speechiness</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[speechiness]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>speechiness</remote-alias>
-            <ordinal>5</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>acousticness</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[acousticness]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>acousticness</remote-alias>
-            <ordinal>6</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>instrumentalness</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[instrumentalness]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>instrumentalness</remote-alias>
-            <ordinal>7</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>liveness</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[liveness]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>liveness</remote-alias>
-            <ordinal>8</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>valence</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[valence]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>valence</remote-alias>
-            <ordinal>9</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>tempo</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[tempo]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>tempo</remote-alias>
-            <ordinal>10</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>type</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[type]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>type</remote-alias>
-            <ordinal>11</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>id</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[id]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>id</remote-alias>
-            <ordinal>12</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>uri</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[uri]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>uri</remote-alias>
-            <ordinal>13</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>track_href</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[track_href]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>track_href</remote-alias>
-            <ordinal>14</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>analysis_url</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[analysis_url]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>analysis_url</remote-alias>
-            <ordinal>15</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>duration_ms</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[duration_ms]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>duration_ms</remote-alias>
-            <ordinal>16</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>time_signature</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[time_signature]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>time_signature</remote-alias>
-            <ordinal>17</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>rank</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[rank]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>rank</remote-alias>
-            <ordinal>18</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>artist</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[artist]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>artist</remote-alias>
-            <ordinal>19</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>song</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[song]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>song</remote-alias>
-            <ordinal>20</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>album</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[album]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>album</remote-alias>
-            <ordinal>21</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>release_date</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[release_date]</local-name>
-            <parent-name>[topsongs_combined.csv]</parent-name>
-            <remote-alias>release_date</remote-alias>
-            <ordinal>22</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-        </metadata-records>
-      </connection>
-      <aliases enabled='yes' />
-      <column aggregation='None' datatype='integer' name='[Acousticness (bin)]' role='dimension' type='quantitative'>
-        <calculation class='bin' decimals='-2' formula='[acousticness]' peg='0' size='0.0631' />
-      </column>
-      <_.fcp.ObjectModelTableType.true...column caption='topsongs_combined.csv' datatype='table' name='[__tableau_internal_object_id__].[topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263]' role='measure' type='quantitative' />
-      <column caption='Acousticness' datatype='real' name='[acousticness]' role='measure' type='quantitative' />
-      <column caption='Album' datatype='string' name='[album]' role='dimension' type='nominal' />
-      <column caption='Analysis Url' datatype='string' name='[analysis_url]' role='dimension' type='nominal' />
-      <column caption='Artist' datatype='string' name='[artist]' role='dimension' type='nominal' />
-      <column caption='Danceability' datatype='real' name='[danceability]' role='measure' type='quantitative' />
-      <column caption='Duration Ms' datatype='integer' name='[duration_ms]' role='measure' type='quantitative' />
-      <column caption='Energy' datatype='real' name='[energy]' role='measure' type='quantitative' />
-      <column caption='Id' datatype='string' name='[id]' role='dimension' type='nominal' />
-      <column caption='Instrumentalness' datatype='real' name='[instrumentalness]' role='measure' type='quantitative' />
-      <column caption='Key' datatype='integer' name='[key]' role='dimension' type='ordinal' />
-      <column caption='Liveness' datatype='real' name='[liveness]' role='measure' type='quantitative' />
-      <column caption='Loudness' datatype='real' name='[loudness]' role='measure' type='quantitative' />
-      <column caption='Mode' datatype='integer' name='[mode]' role='measure' type='quantitative' />
-      <column caption='Rank' datatype='integer' name='[rank]' role='measure' type='quantitative' />
-      <column caption='Release Date' datatype='string' name='[release_date]' role='dimension' type='nominal' />
-      <column caption='Song' datatype='string' name='[song]' role='dimension' type='nominal' />
-      <column caption='Speechiness' datatype='real' name='[speechiness]' role='measure' type='quantitative' />
-      <column caption='Tempo' datatype='real' name='[tempo]' role='measure' type='quantitative' />
-      <column caption='Time Signature' datatype='integer' name='[time_signature]' role='measure' type='quantitative' />
-      <column caption='Track Href' datatype='string' name='[track_href]' role='dimension' type='nominal' />
-      <column caption='Type' datatype='string' name='[type]' role='dimension' type='nominal' />
-      <column caption='Uri' datatype='string' name='[uri]' role='dimension' type='nominal' />
-      <column caption='Valence' datatype='real' name='[valence]' role='measure' type='quantitative' />
-      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
-      </semantic-values>
-      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
-        <objects>
-          <object caption='topsongs_combined.csv' id='topsongs_combined.csv_B689EB70D5864D5BA753DF7DF29BB263'>
-            <properties context=''>
-              <relation connection='textscan.0m5mrra0vaphan1308oo20vom31k' name='topsongs_combined.csv' table='[topsongs_combined#csv]' type='table'>
-                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                  <column datatype='real' name='danceability' ordinal='0' />
-                  <column datatype='real' name='energy' ordinal='1' />
-                  <column datatype='integer' name='key' ordinal='2' />
-                  <column datatype='real' name='loudness' ordinal='3' />
-                  <column datatype='integer' name='mode' ordinal='4' />
-                  <column datatype='real' name='speechiness' ordinal='5' />
-                  <column datatype='real' name='acousticness' ordinal='6' />
-                  <column datatype='real' name='instrumentalness' ordinal='7' />
-                  <column datatype='real' name='liveness' ordinal='8' />
-                  <column datatype='real' name='valence' ordinal='9' />
-                  <column datatype='real' name='tempo' ordinal='10' />
-                  <column datatype='string' name='type' ordinal='11' />
-                  <column datatype='string' name='id' ordinal='12' />
-                  <column datatype='string' name='uri' ordinal='13' />
-                  <column datatype='string' name='track_href' ordinal='14' />
-                  <column datatype='string' name='analysis_url' ordinal='15' />
-                  <column datatype='integer' name='duration_ms' ordinal='16' />
-                  <column datatype='integer' name='time_signature' ordinal='17' />
-                  <column datatype='integer' name='rank' ordinal='18' />
-                  <column datatype='string' name='artist' ordinal='19' />
-                  <column datatype='string' name='song' ordinal='20' />
-                  <column datatype='string' name='album' ordinal='21' />
-                  <column datatype='string' name='release_date' ordinal='22' />
-                </columns>
-              </relation>
-            </properties>
-          </object>
-        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[release_year]' />
+              <expression op='[release_year (af_melted.csv)]' />
+            </expression>
+            <first-end-point object-id='af_charts_combined.csv_56B1A0C6A47C4A39BF2E8B8EEA0FF01A' />
+            <second-end-point object-id='af_melted.csv_B1A1567285F34996A7F46A9C5592C97B' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[date]' />
+              <expression op='[year]' />
+            </expression>
+            <first-end-point object-id='af_charts_combined.csv_56B1A0C6A47C4A39BF2E8B8EEA0FF01A' />
+            <second-end-point object-id='musicdata_clean.csv_40B50A435F73483B8D651B3326AC597E' />
+          </relationship>
+        </relationships>
       </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
     </datasource>
   </datasources>
   <actions>
-    <action caption='Highlight1' name='[Action1_E96CB54820BF401EA886F323A799DD96]'>
-      <activation auto-clear='true' type='on-select' />
-      <source type='sheet' worksheet='sales_bar' />
-      <command command='tsc:brush'>
-        <param name='field-captions' value='Format' />
-        <param name='target' value='sales_bar' />
-      </command>
-    </action>
     <action caption='Highlight2' name='[Action2_307FBBEE1F2849B1A7FC06B636AA9A57]'>
       <activation auto-clear='true' type='on-select' />
       <source dashboard='main' type='sheet'>
@@ -3067,13 +3254,12 @@
         <param name='target' value='main' />
       </command>
     </action>
-    <action caption='Highlight3' name='[Action3_C5EB5BA7C52247B48A71FFF4633B8E5D]'>
+    <action caption='&lt;[format]&gt;' name='[Action3_23DF47983E0740F0A05D0686AAA2729C]'>
       <activation auto-clear='true' type='on-select' />
-      <source datasource='federated.154cm6u033iwps14i09uf0rqp8p3' type='datasource' />
+      <source dashboard='main' type='sheet' />
       <command command='tsc:brush'>
-        <param name='exclude' value='copmare_two,spider_chart,Loudness,Duration,interactive_line,topsongs,mode,popular_key,Year Title' />
-        <param name='field-captions' value='Format' />
-        <param name='target' value='main' />
+        <param name='field-captions' value='ATTR(Format)' />
+        <param name='target' value='sales_bar' />
       </command>
     </action>
   </actions>
@@ -3488,11 +3674,11 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='X Variable' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Energy&quot;'>
-              <calculation class='tableau' formula='&quot;Energy&quot;' />
+            <column caption='X Variable' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Danceability&quot;'>
+              <calculation class='tableau' formula='&quot;Danceability&quot;' />
             </column>
-            <column caption='Y Variable' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Energy&quot;'>
-              <calculation class='tableau' formula='&quot;Energy&quot;' />
+            <column caption='Y Variable' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Acousticness&quot;'>
+              <calculation class='tableau' formula='&quot;Acousticness&quot;' />
             </column>
           </datasource-dependencies>
           <datasource-dependencies datasource='federated.07gz19p0mtp7dx170vfiv0s5ub1g'>
@@ -3749,8 +3935,8 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='line_selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Valence&quot;'>
-              <calculation class='tableau' formula='&quot;Valence&quot;' />
+            <column caption='line_selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Acousticness&quot;'>
+              <calculation class='tableau' formula='&quot;Acousticness&quot;' />
             </column>
           </datasource-dependencies>
           <datasource-dependencies datasource='federated.07gz19p0mtp7dx170vfiv0s5ub1g'>
@@ -3861,8 +4047,8 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='line_selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Valence&quot;'>
-              <calculation class='tableau' formula='&quot;Valence&quot;' />
+            <column caption='line_selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Acousticness&quot;'>
+              <calculation class='tableau' formula='&quot;Acousticness&quot;' />
             </column>
           </datasource-dependencies>
           <datasource-dependencies datasource='federated.07gz19p0mtp7dx170vfiv0s5ub1g'>
@@ -4126,6 +4312,9 @@
           <style-rule element='table'>
             <format attr='background-color' value='#191414' />
           </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='color' value='#000000' />
+          </style-rule>
         </style>
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
@@ -4350,30 +4539,35 @@
       <table>
         <view>
           <datasources>
-            <datasource caption='musicdata_clean' name='federated.154cm6u033iwps14i09uf0rqp8p3' />
+            <datasource caption='all_charts_nondup' name='federated.07gz19p0mtp7dx170vfiv0s5ub1g' />
           </datasources>
-          <datasource-dependencies datasource='federated.154cm6u033iwps14i09uf0rqp8p3'>
-            <column caption='value_millions' datatype='real' default-format='c&quot;$&quot;#,##0,,,.00B;(&quot;$&quot;#,##0,,,.00B)' name='[Calculation_1011339631695278080]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='[value_actual] * 1000000' />
+          <datasource-dependencies datasource='federated.07gz19p0mtp7dx170vfiv0s5ub1g'>
+            <column caption='the_real_sales_year' datatype='date' datatype-customized='true' name='[Calculation_1106478174869782528]' role='dimension' type='quantitative'>
+              <calculation class='tableau' formula='DATE(DATEPARSE ( &quot;yyyy&quot;, STR(YEAR([year])) )) ' />
             </column>
-            <column caption='metric_clean' datatype='string' name='[Calculation_569423917438959616]' role='dimension' type='nominal'>
-              <calculation class='tableau' formula='IF [metric]== &quot;Units&quot; THEN &quot;Units (Millions)&quot;&#13;&#10;ELSEIF [metric]==&quot;Value&quot; THEN &quot;Revenue (Millions)&quot;&#13;&#10;ELSEIF [metric] == &quot;Value (Adjusted)&quot; THEN &quot;Revenue Adjusted for Inflation (Millions)&quot;&#13;&#10;END' />
-            </column>
+            <column-instance column='[format]' derivation='Attribute' name='[attr:format:nk]' pivot='key' type='nominal' />
             <column caption='Format' datatype='string' name='[format]' role='dimension' type='nominal' />
-            <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
-            <column-instance column='[Calculation_569423917438959616]' derivation='None' name='[none:Calculation_569423917438959616:nk]' pivot='key' type='nominal' />
+            <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;Units&quot;' value='Units (Millions)' />
+                <alias key='&quot;Value&quot;' value='Total Value (Millions)' />
+                <alias key='&quot;Value (Adjusted)&quot;' value='Total Value(Adjusted for Inflation)' />
+              </aliases>
+            </column>
             <column-instance column='[format]' derivation='None' name='[none:format:nk]' pivot='key' type='nominal' />
-            <column-instance column='[Calculation_1011339631695278080]' derivation='Sum' name='[sum:Calculation_1011339631695278080:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[metric]' derivation='None' name='[none:metric:nk]' pivot='key' type='nominal' />
             <column-instance column='[value_actual]' derivation='Sum' name='[sum:value_actual:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[year]' derivation='Year-Trunc' name='[tyr:year:qk]' pivot='key' type='quantitative' />
-            <column caption='Value Actual' datatype='real' default-format='*$0,000' name='[value_actual]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1106478174869782528]' derivation='Year-Trunc' name='[tyr:Calculation_1106478174869782528:qk]' pivot='key' type='quantitative' />
+            <column caption='Value Actual' datatype='real' name='[value_actual]' role='measure' type='quantitative' />
             <column caption='Year' datatype='date' name='[year]' role='dimension' type='quantitative' />
-            <column-instance column='[year]' derivation='Year' name='[yr:year:ok]' pivot='key' type='ordinal' />
           </datasource-dependencies>
-          <filter class='categorical' column='[federated.154cm6u033iwps14i09uf0rqp8p3].[none:Calculation_569423917438959616:nk]'>
-            <groupfilter function='member' level='[none:Calculation_569423917438959616:nk]' member='&quot;Revenue Adjusted for Inflation (Millions)&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          <filter class='categorical' column='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[attr:format:nk]'>
+            <groupfilter function='level-members' level='[attr:format:nk]' />
           </filter>
-          <manual-sort column='[federated.154cm6u033iwps14i09uf0rqp8p3].[none:format:nk]' direction='ASC'>
+          <filter class='categorical' column='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:format:nk]'>
+            <groupfilter function='level-members' level='[none:format:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <manual-sort column='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:format:nk]' direction='ASC'>
             <dictionary>
               <bucket>&quot;LP/EP&quot;</bucket>
               <bucket>&quot;Vinyl Single&quot;</bucket>
@@ -4395,23 +4589,22 @@
               <bucket>&quot;Paid Subscription&quot;</bucket>
               <bucket>&quot;On-Demand Streaming (Ad-Supported)&quot;</bucket>
               <bucket>&quot;Other Ad-Supported Streaming&quot;</bucket>
-              <bucket>&quot;SoundExchange Distributions&quot;</bucket>
               <bucket>&quot;Limited Tier Paid Subscription&quot;</bucket>
+              <bucket>&quot;SoundExchange Distributions&quot;</bucket>
               <bucket>&quot;Synchronization&quot;</bucket>
             </dictionary>
           </manual-sort>
+          <filter class='categorical' column='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:metric:nk]'>
+            <groupfilter function='member' level='[none:metric:nk]' member='&quot;Value (Adjusted)&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
           <slices>
-            <column>[federated.154cm6u033iwps14i09uf0rqp8p3].[none:Calculation_569423917438959616:nk]</column>
+            <column>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:metric:nk]</column>
+            <column>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:format:nk]</column>
+            <column>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[attr:format:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
         <style>
-          <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.154cm6u033iwps14i09uf0rqp8p3].[tyr:year:qk]' field-type='quantitative' max='#2020-02-08 01:12:00#' min='#1972-08-30 22:48:00#' range-type='fixed' scope='cols' type='space' />
-            <format attr='title' class='0' field='[federated.154cm6u033iwps14i09uf0rqp8p3].[tyr:year:qk]' scope='cols' value='Year' />
-            <format attr='title' class='0' field='[federated.154cm6u033iwps14i09uf0rqp8p3].[sum:value_actual:qk]' scope='rows' value='Revenue (Millions)' />
-            <encoding attr='space' class='0' field='[federated.154cm6u033iwps14i09uf0rqp8p3].[sum:value_actual:qk]' field-type='quantitative' min='0.0' range-type='fixedmin' scope='rows' type='space' />
-          </style-rule>
           <style-rule element='cell'>
             <format attr='border-color' value='#1db954' />
             <format attr='border-width' value='0' />
@@ -4446,13 +4639,12 @@
             <format attr='font-size' value='9' />
           </style-rule>
           <style-rule element='quick-filter'>
-            <format attr='title' field='[federated.154cm6u033iwps14i09uf0rqp8p3].[none:Calculation_569423917438959616:nk]' value='View' />
             <format attr='border-color' value='#ffffff' />
             <format attr='background-color' value='#00000000' />
-            <format attr='color' value='#ffffff' />
             <format attr='font-size' value='12' />
             <format attr='border-width' value='0' />
             <format attr='border-style' value='none' />
+            <format attr='color' value='#000000' />
           </style-rule>
           <style-rule element='quick-filter-title'>
             <format attr='font-size' value='12' />
@@ -4460,39 +4652,38 @@
           </style-rule>
         </style>
         <panes>
-          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+          <pane id='10' selection-relaxation-option='selection-relaxation-allow'>
             <view>
               <breakdown value='auto' />
             </view>
             <mark class='Bar' />
-            <mark-sizing custom-mark-size-in-axis-units='280.0' mark-alignment='mark-alignment-left' mark-sizing-setting='marks-scaling-on' use-custom-mark-size='true' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
             <encodings>
-              <color column='[federated.154cm6u033iwps14i09uf0rqp8p3].[none:format:nk]' />
-              <lod column='[federated.154cm6u033iwps14i09uf0rqp8p3].[yr:year:ok]' />
-              <tooltip column='[federated.154cm6u033iwps14i09uf0rqp8p3].[sum:Calculation_1011339631695278080:qk]' />
+              <color column='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:format:nk]' />
+              <tooltip column='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[attr:format:nk]' />
+              <tooltip column='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[sum:value_actual:qk]' />
             </encodings>
             <customized-tooltip>
               <formatted-text>
-                <run fontcolor='#787878'>Format:&#9;</run>
-                <run bold='true'><![CDATA[<[federated.154cm6u033iwps14i09uf0rqp8p3].[none:format:nk]>]]></run>
+                <run fontcolor='#787878'><![CDATA[Year: <[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[tyr:Calculation_1106478174869782528:qk]>]]></run>
                 <run>Æ&#10;</run>
-                <run fontcolor='#787878'>Year:&#9;</run>
-                <run bold='true'><![CDATA[<[federated.154cm6u033iwps14i09uf0rqp8p3].[tyr:year:qk]>]]></run>
+                <run fontcolor='#787878'><![CDATA[Format:	<[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[attr:format:nk]>]]></run>
                 <run>Æ&#10;</run>
-                <run fontcolor='#787878'>Value:&#9;</run>
-                <run bold='true'><![CDATA[<[federated.154cm6u033iwps14i09uf0rqp8p3].[sum:Calculation_1011339631695278080:qk]>]]></run>
+                <run fontcolor='#787878'><![CDATA[Value:	<[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[sum:value_actual:qk]>]]></run>
                 <run>Æ&#10;</run>
               </formatted-text>
             </customized-tooltip>
             <style>
               <style-rule element='mark'>
                 <format attr='size' value='1.9890055656433105' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
               </style-rule>
             </style>
           </pane>
         </panes>
-        <rows>[federated.154cm6u033iwps14i09uf0rqp8p3].[sum:value_actual:qk]</rows>
-        <cols>[federated.154cm6u033iwps14i09uf0rqp8p3].[tyr:year:qk]</cols>
+        <rows>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[sum:value_actual:qk]</rows>
+        <cols>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[tyr:Calculation_1106478174869782528:qk]</cols>
       </table>
       <simple-id uuid='{DE57A5E8-CB59-4F10-A145-35B0F82F43D4}' />
     </worksheet>
@@ -5071,8 +5262,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='8' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='7' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000' />
+            <zone h='100000' id='16' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='15' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000' />
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -5278,8 +5469,8 @@
           </layout-options>
           <size maxheight='2650' minheight='2650' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='68' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='99734' id='67' param='vert' type-v2='layout-flow' w='99238' x='381' y='133'>
+            <zone h='100000' id='76' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='75' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone forceUpdate='true' h='4700' id='52' type-v2='text' w='96286' x='667' y='483'>
                   <formatted-text>
                     <run fontalignment='1' fontsize='48'>Welcome to my capstone project!</run>
@@ -5516,8 +5707,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='16' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='15' param='vert' type-v2='layout-flow' w='99238' x='381' y='1000' />
+            <zone h='100000' id='24' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='23' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000' />
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -5574,8 +5765,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='33' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='32' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+            <zone h='100000' id='41' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='40' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone forceUpdate='true' h='15000' id='5' type-v2='text' w='63500' x='17100' y='22500'>
                   <formatted-text>
                     <run fontalignment='1' fontsize='26'>The Most &quot;Ideal&quot; Song of 2021</run>
@@ -5643,11 +5834,10 @@
       <datasources>
         <datasource name='Parameters' />
         <datasource caption='all_charts_nondup' name='federated.07gz19p0mtp7dx170vfiv0s5ub1g' />
-        <datasource caption='musicdata_clean' name='federated.154cm6u033iwps14i09uf0rqp8p3' />
       </datasources>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='line_selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Valence&quot;'>
-          <calculation class='tableau' formula='&quot;Valence&quot;' />
+        <column caption='line_selector' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Acousticness&quot;'>
+          <calculation class='tableau' formula='&quot;Acousticness&quot;' />
           <members>
             <member value='&quot;Acousticness&quot;' />
             <member value='&quot;Danceability&quot;' />
@@ -5658,8 +5848,8 @@
             <member value='&quot;Valence&quot;' />
           </members>
         </column>
-        <column caption='X Variable' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Energy&quot;'>
-          <calculation class='tableau' formula='&quot;Energy&quot;' />
+        <column caption='X Variable' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Danceability&quot;'>
+          <calculation class='tableau' formula='&quot;Danceability&quot;' />
           <members>
             <member value='&quot;Acousticness&quot;' />
             <member value='&quot;Danceability&quot;' />
@@ -5671,8 +5861,8 @@
             <member value='&quot;Valence&quot;' />
           </members>
         </column>
-        <column caption='Y Variable' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Energy&quot;'>
-          <calculation class='tableau' formula='&quot;Energy&quot;' />
+        <column caption='Y Variable' datatype='string' name='[Parameter 3]' param-domain-type='list' role='measure' type='nominal' value='&quot;Acousticness&quot;'>
+          <calculation class='tableau' formula='&quot;Acousticness&quot;' />
           <members>
             <member value='&quot;Acousticness&quot;' />
             <member value='&quot;Danceability&quot;' />
@@ -5685,15 +5875,19 @@
         </column>
       </datasource-dependencies>
       <datasource-dependencies datasource='federated.07gz19p0mtp7dx170vfiv0s5ub1g'>
+        <column caption='Format' datatype='string' name='[format]' role='dimension' type='nominal' />
+        <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal'>
+          <aliases>
+            <alias key='&quot;Units&quot;' value='Units (Millions)' />
+            <alias key='&quot;Value&quot;' value='Total Value (Millions)' />
+            <alias key='&quot;Value (Adjusted)&quot;' value='Total Value(Adjusted for Inflation)' />
+          </aliases>
+        </column>
+        <column-instance column='[format]' derivation='None' name='[none:format:nk]' pivot='key' type='nominal' />
+        <column-instance column='[metric]' derivation='None' name='[none:metric:nk]' pivot='key' type='nominal' />
         <column-instance column='[release_year]' derivation='None' name='[none:release_year:qk]' pivot='key' type='quantitative' />
         <column caption='Release Year' datatype='date' name='[release_year]' role='dimension' type='quantitative' />
         <column-instance column='[release_year]' derivation='Year' name='[yr:release_year:ok]' pivot='key' type='ordinal' />
-      </datasource-dependencies>
-      <datasource-dependencies datasource='federated.154cm6u033iwps14i09uf0rqp8p3'>
-        <column caption='metric_clean' datatype='string' name='[Calculation_569423917438959616]' role='dimension' type='nominal'>
-          <calculation class='tableau' formula='IF [metric]== &quot;Units&quot; THEN &quot;Units (Millions)&quot;&#13;&#10;ELSEIF [metric]==&quot;Value&quot; THEN &quot;Revenue (Millions)&quot;&#13;&#10;ELSEIF [metric] == &quot;Value (Adjusted)&quot; THEN &quot;Revenue Adjusted for Inflation (Millions)&quot;&#13;&#10;END' />
-        </column>
-        <column-instance column='[Calculation_569423917438959616]' derivation='None' name='[none:Calculation_569423917438959616:nk]' pivot='key' type='nominal' />
       </datasource-dependencies>
       <zones>
         <zone h='4865' id='168' type-v2='text' w='96762' x='95' y='946'>
@@ -5821,7 +6015,6 @@
             <format attr='padding' value='12' />
           </zone-style>
         </zone>
-        <zone h='17432' id='91' name='sales_bar' pane-specification-id='2' param='[federated.154cm6u033iwps14i09uf0rqp8p3].[none:format:nk]' type-v2='color' w='18000' x='80952' y='40541' />
         <zone h='14865' id='108' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='84286' x='1190' y='22757'>
           <zone fixed-size='912' h='14649' id='109' is-fixed='true' name='Loudness' w='41952' x='1381' y='22865'>
             <layout-cache minwidth='153' type-h='fixed' type-w='scalable' />
@@ -5850,7 +6043,6 @@
         </zone>
         <zone h='2281' id='110' name='Loudness' pane-specification-id='0' param='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[avg:loudness:qk]' type-v2='color' w='6667' x='4762' y='29031' />
         <zone h='2270' id='112' name='Duration' pane-specification-id='0' param='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[avg:Calculation_742531028624629761:qk]' type-v2='color' w='6667' x='50714' y='32486' />
-        <zone h='2270' id='130' mode='dropdown' name='sales_bar' param='[federated.154cm6u033iwps14i09uf0rqp8p3].[none:Calculation_569423917438959616:nk]' type-v2='filter' values='database' w='10952' x='66810' y='41135' />
         <zone custom-title='true' h='1541' id='31' mode='compact' param='[Parameters].[Parameter 2]' type-v2='paramctrl' w='7619' x='76667' y='19703'>
           <formatted-text>
             <run fontsize='12'>X Variable</run>
@@ -5922,6 +6114,9 @@
             </button-visual-state>
           </button>
         </zone>
+        <zone h='16622' id='185' name='sales_bar' pane-specification-id='10' param='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:format:nk]' type-v2='color' w='17714' x='80476' y='41703' />
+        <zone h='1541' id='183' mode='dropdown' name='sales_bar' param='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:metric:nk]' type-v2='filter' values='database' w='8000' x='71762' y='40919' />
+        <zone h='1541' id='182' mode='checkdropdown' name='sales_bar' param='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:format:nk]' type-v2='filter' values='database' w='8000' x='86667' y='40054' />
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
@@ -5934,10 +6129,10 @@
               </formatted-text>
             </title>
           </layout-options>
-          <size maxheight='3950' minheight='3950' sizing-mode='vscroll' />
+          <size maxheight='4050' minheight='4050' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='179' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='99568' id='178' param='vert' type-v2='layout-flow' w='99238' x='381' y='216'>
+            <zone h='100000' id='191' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='99568' id='190' param='vert' type-v2='layout-flow' w='99238' x='381' y='216'>
                 <zone h='3757' id='162' type-v2='dashboard-object' w='16095' x='1143' y='514'>
                   <button action='tabdoc:goto-sheet window-id=&quot;{5B6CE72B-2136-408B-B702-FF3D594DED62}&quot;' button-type='text'>
                     <button-visual-state>
@@ -6081,7 +6276,16 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='2270' id='130' mode='dropdown' name='sales_bar' param='[federated.154cm6u033iwps14i09uf0rqp8p3].[none:Calculation_569423917438959616:nk]' type-v2='filter' values='database' w='10952' x='66810' y='41135'>
+                <zone h='1541' id='183' mode='dropdown' name='sales_bar' param='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:metric:nk]' type-v2='filter' values='database' w='8000' x='71762' y='40919'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='1541' id='182' mode='checkdropdown' name='sales_bar' param='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:format:nk]' type-v2='filter' values='database' w='8000' x='86667' y='40054'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -6099,7 +6303,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='17432' id='91' name='sales_bar' pane-specification-id='2' param='[federated.154cm6u033iwps14i09uf0rqp8p3].[none:format:nk]' type-v2='color' w='18000' x='80952' y='40541'>
+                <zone h='16622' id='185' name='sales_bar' pane-specification-id='10' param='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:format:nk]' type-v2='color' w='17714' x='80476' y='41703'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -6804,14 +7008,22 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card mode='dropdown' param='[federated.154cm6u033iwps14i09uf0rqp8p3].[none:Calculation_569423917438959616:nk]' show-all='false' type='filter' />
-            <card pane-specification-id='2' param='[federated.154cm6u033iwps14i09uf0rqp8p3].[none:format:nk]' type='color' />
+            <card mode='checkdropdown' param='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:format:nk]' type='filter' values='relevant' />
+            <card mode='dropdown' param='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:metric:nk]' show-all='false' type='filter' />
+            <card pane-specification-id='10' param='[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:format:nk]' type='color' />
           </strip>
         </edge>
       </cards>
       <viewpoint>
         <highlight>
           <color-one-way>
+            <field>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:Calculation_1197113117266665473:nk]</field>
+            <field>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:format:nk]</field>
+            <field>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:metric:nk]</field>
+            <field>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:year:qk]</field>
+            <field>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[tyr:Calculation_1106478174869782528:qk]</field>
+            <field>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[tyr:release_year (af_melted.csv):qk]</field>
+            <field>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[tyr:release_year:qk]</field>
             <field>[federated.154cm6u033iwps14i09uf0rqp8p3].[none:Calculation_569423917438959616:nk]</field>
             <field>[federated.154cm6u033iwps14i09uf0rqp8p3].[none:format:nk]</field>
             <field>[federated.154cm6u033iwps14i09uf0rqp8p3].[none:metric:nk]</field>
@@ -6819,6 +7031,7 @@
             <field>[federated.154cm6u033iwps14i09uf0rqp8p3].[tyr:year:qk]</field>
           </color-one-way>
         </highlight>
+        <floating-toolbar-visibility value='2' />
       </viewpoint>
       <simple-id uuid='{843B6FCC-CACC-4322-BA04-9E0328F92EC1}' />
     </window>
@@ -6846,7 +7059,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='49' />
+      <active id='-1' />
       <simple-id uuid='{5B6CE72B-2136-408B-B702-FF3D594DED62}' />
     </window>
     <window class='worksheet' name='acoustic_explination' tab-color='#4f779a'>
@@ -7092,7 +7305,7 @@
       </viewpoint>
       <simple-id uuid='{097E8836-626B-41BD-826B-D3490B219D08}' />
     </window>
-    <window class='dashboard' name='main'>
+    <window class='dashboard' maximized='true' name='main'>
       <viewpoints>
         <viewpoint name='Duration'>
           <zoom type='fit-width' />
@@ -7113,38 +7326,10 @@
         </viewpoint>
         <viewpoint name='sales_bar'>
           <zoom type='entire-view' />
-          <selection-collection>
-            <tuple-selection>
-              <tuple-reference>
-                <tuple-descriptor>
-                  <pane-descriptor>
-                    <x-fields>
-                      <field>[federated.154cm6u033iwps14i09uf0rqp8p3].[tyr:year:qk]</field>
-                    </x-fields>
-                    <y-fields>
-                      <field>[federated.154cm6u033iwps14i09uf0rqp8p3].[sum:value_actual:qk]</field>
-                    </y-fields>
-                  </pane-descriptor>
-                  <columns>
-                    <field>[federated.154cm6u033iwps14i09uf0rqp8p3].[none:format:nk]</field>
-                    <field>[federated.154cm6u033iwps14i09uf0rqp8p3].[sum:Calculation_1011339631695278080:qk]</field>
-                    <field>[federated.154cm6u033iwps14i09uf0rqp8p3].[sum:value_actual:qk]</field>
-                    <field>[federated.154cm6u033iwps14i09uf0rqp8p3].[tyr:year:qk]</field>
-                    <field>[federated.154cm6u033iwps14i09uf0rqp8p3].[yr:year:ok]</field>
-                  </columns>
-                </tuple-descriptor>
-                <tuple>
-                  <value>&quot;CD&quot;</value>
-                  <value>15793549661.681999</value>
-                  <value>15793.549661682</value>
-                  <value>#1997-01-01 00:00:00#</value>
-                  <value>1997</value>
-                </tuple>
-              </tuple-reference>
-            </tuple-selection>
-          </selection-collection>
-          <highlight field='[federated.154cm6u033iwps14i09uf0rqp8p3].[none:format:nk]'>
-            <bucket-selection />
+          <highlight>
+            <color-one-way>
+              <field>[federated.07gz19p0mtp7dx170vfiv0s5ub1g].[none:format:nk]</field>
+            </color-one-way>
           </highlight>
         </viewpoint>
         <viewpoint name='spider_chart'>
@@ -7152,7 +7337,7 @@
         </viewpoint>
         <viewpoint name='topsongs' />
       </viewpoints>
-      <active id='61' />
+      <active id='89' />
       <device-preview visible='true' />
       <simple-id uuid='{E44333C7-EB99-4326-92F4-B20AE2093297}' />
     </window>
@@ -7213,7 +7398,7 @@
       </viewpoint>
       <simple-id uuid='{922B278B-06F6-4E7E-A0FF-FB4BFD4C1EA6}' />
     </window>
-    <window class='worksheet' maximized='true' name='most_streamed' tab-color='#72bcbb'>
+    <window class='worksheet' name='most_streamed' tab-color='#72bcbb'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -8571,126 +8756,129 @@
     </thumbnail>
     <thumbnail height='192' name='main' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
-      AAAZCUlEQVR4nO3deXgU953n8Xe3unWrdXTrvoUk0IGQuUEghDkEGAzGHAFsEoOZxJOsnUx2
-      dnZndp/Ns8+zz+4zk2efnUw2Hq93HGc8jh07tomNY4NPMMYSAgkQQrfUOtDRklpS65b62D8w
-      AiwJ0bQuqO/rH6m6fvXrb0v96eqq+lWVKtxgcCCEQqlnuwAhZpMEQCiaBEAommaiGaqUgJms
-      46HnaBuE9sHZLkN8x4QBcPvPmTiudc1kLQ+vYE8cZ1qwv2uc7UrEd0wYAADbf780U3U81NS7
-      42a7BDEB2QYQiiYBEIomARCKJgEQiiYBEIomARCKJgEQiiYBEIomARCKJgEQiiYBEIomARCK
-      JgEQijZlAfDWGQgz6FzuJzomZgqquRstcXGRJMybN2ELnSEcvc57musQc4Gbn7f3L8aboX4y
-      bsz49b/7X6+Q6NfDhl0HUHsFsXlVOl6GCKzDGlasWkG4TsXyTbtJDPVFn7CIzavSydz2DE/n
-      zMNkDWDzqlQul1Tw8//xj+RuzGW+3k7Sym1E6hx4hCSyZXU6q3Jy8fDyxFjTyOsfnGCguZr0
-      rFyiA9yoqW/ixdffZc3aNQy1GNmw9xA6h4N/+JeX6aytYd3OJ9E5eqlrauPltz4gOcofNw8d
-      4RERxCfMZ+u2TXQ0dvHMsR0E6qMxhMexcWM2pnYLzxw5jN3hyUsv/29a2yzo1ENseOIAbv1t
-      LHl0Jzkr0yksKubnv/wNOx/diMEX1m3ZybC5kbSsbeRmpXO9G75/4HGuFhVitd/6u908uchR
-      KudXzDVOrQFGOioJSl6Nuwo81HYWZG8m0pDMCy/8ADc7ZGZvIXjESEbWhtH57eUVfPznjzlw
-      YC+B8xYS+O0ZCLbBIQasKoZ62ti2Yw8HntzOW+9/QljqWhbH++FgmPLLF/iiso90/SA5j+0G
-      oKe1ln948XXWZGfR09bEY3u2c+1iAZ9dKP12ev9tBY9Q2wkv/GAr0YvWUnSpiO/t3ARAVEws
-      2VlL6HePIjVOh8liY2l8IIUXvqZlQEvOY/sYrDnPrqeOsjwzBf+EVG6uE+yDFq6399LS2Mqe
-      fU+zKSuB0IR0Dh/9Pj0jXqQnhLv8jxEzw6kA1NfV8e6fv8J9uIOk9EwGu9v46otTBHrYuFhR
-      T0nRBcLS1hHu7z46v/raZZbnbKDwcgnutl6GrdBQW8uIbYCOPgePZGbQ3Gjk/JUKnt7zGOc/
-      eh2zyoAbUHC1lk2pegb9k2mqugqAqcfOTw5t4fhneSzKSKPRaORSeRM7cnNGpwGMtbWg1bI4
-      KYSTedUEeWs58OQOPj19BqOxkbraWmqqqmiqr8FbH01sqD/Nbc302III8Rgk/8xnJK3ZSUn+
-      51RXVlJXXYMNaKgu5u9/8V+paB1iYUosdfXldAzqyJwfw5en84gN9aGjZ2CK/01iuqgmui6Q
-      5vUcrIe+dK43r0Cef+4I+Z+9T/7lyikob+qkL8+hpeRL2vumvu/9R3/CYONl/nTyq3Hn3zwj
-      TE6JnHumNgBiXBKAuUt2gwpFkwAIRZMACEWTAAhFkwAIRZMACEWTAAhFkwAIRZMACEWTAAhF
-      kwAIRZMACEW76/0B5Lr2U0OVEiAnw8xRE64B7O8YZ7CMh5ujtEsCMEdNOBxaCCWQbQChaBIA
-      oWgSAKFoEgChaBIAoWgSAKFoEgChaBIAoWgSAKFoEgChaBIAoWgSAKFoEgChaBIAoWgSAKFo
-      EgChaBIAoWgSAKFoEgChaBIAoWgSAKFoEgChaBIAoWgSAKFoEgChaBIAoWgSAKFoEgChaBIA
-      oWgSAKFoEgChaBPeISYtPR2dTjeTtQgx4yYMgE6n45tz52ayFiFm3F3vEQayJhAPt0kD4Oya
-      IDIqik2bN/PqK6+4VJgQM2HSAEwmInEJKWGDmG165of78+a7H1B67dpU1CbEtHN5L1BTSwex
-      CQksTIrCrvGaipqEmDEurwEYaOGzsyr6e/rQ+WinoCQhZo7rAbANUldTC0Bbm8u9CTGj5ECY
-      UDQJgFA0CYBQNAmAUDQJgFA0CYBQNJcDEJuYgr+3O946PUnxUVNRkxAzxsXjAB4sX74IRpIZ
-      0QSSmRDMy797g5TUVPLz8qamQiGmkYtrgBGGbFp6Bx3UFudxsbCI642N9zUWaNX6R9ECC5bl
-      MC/Mb+KGbh7sefooPzn2FPuOHMVzgmaxKYsJ9XcHYPOWLQAsyd5EgIfqjnZRKctYlBg2Or3r
-      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
-      RU5ErkJggg==
+      AAAZ1klEQVR4nO3deVhUd77n8XdVscu+I/u+KohGRFwwKu6aqNEYs7gkNze5/XS6n8xMTz93
+      lv5j5pnnmTvPzL23+3Y64zO56WScTqfbtIlJjHHfFxREQPZ9XwqBYqkCqmr+ICFNkGgFqkDO
+      9/UPVeecOvU9UB9+dc75nd9RBfn6mhFCodQzXYAQM0kCIBRNAiAUzW6yGapET1vWMeeZO/TQ
+      qZ/pMsT3TBoAzX9Iw3y/25a1zF1+TpgvtWL6pHamKxHfM2kAAIz/9a6t6pjT1DsjZroEMQnZ
+      BxCKJgEQiiYBEIomARCKJgEQiiYBEIomARCKJgEQiiYBEIomARCKJgEQiiYBEIomARCKNm0B
+      cHH3JdDXfcrrCQ0Lm4Zqfog9ERHBREVHT7qEu28QPu4uVq5DzAYaNxeXXz1shnpXxIT+63//
+      P98jxk3H2mf2oXb2JiczBWff+YwM2ZGRmUGQu4ql63cSE+CKT1QqOZkppG0+yEvZ0bSPeJKT
+      mURBcTlv/7d/YsO6DcT7mIhdtplgdzOO/jFsXJ5CZvYGHJ2dqK1u5OiJzxlsqSIlawOhnhqq
+      65t55+gnrFi5AkNrLWuf24+72cw//J8jPKipZvWOXbib+6hr7uDIxyeIC/FA4+hO0Pz5REbF
+      s2nzerSN3Rx8bRtePqH4BkWwbt0q2jt7OXjoZUxmJ9498o+0dfTirjaw9tl9aAY6WPz0DrKX
+      pZCXX8jb/+O37Hh6Hb6usHrjDoa6GknO2syGrBSaeuCVfdspys9jxPTd7+3bi4vMJXJ9xWxj
+      UQswrK3AO245DipwVJtIWJVDsG8cb711AI0J0lZtxG+4loVZa8fmd5aV89WXX7Fv33N4RS/A
+      65srEIx6A4MjKgy6DjZv282+XVv5+LPTBCatJD3SDTNDlBXc5nxFPyk+erK37ARA11bDP7xz
+      lBWrstB1NLNl91bu38nl7O2Sb57v/auCh6l5AG8d2ERo6kry7+bz/I71AISEhbMqazEDDiEk
+      RbjT3mtkSaQXebev0jpoT/aWPeirb/HMi4dZmpaIR1QS37YJJn0vTZ19tDa2sXvPS6zPiiIg
+      KoWXD7+CbtiZlKigKf9hhG1YFID6ujo++fIyDkNaYlPS0Pd0cPn813g5GrlTXk9x/m0Ck1cT
+      5OEwNr/qfgFLs9eSV1CMg7GPoRFoqKlh2DiItt/MorSFtDTWcuteOS/t3sKtk0fpUvmiAXKL
+      alif5IPeI47myiIA2nUmfrJ/I8fP3iB1YTKNtbXcLWtm24bssecAtTU1YG9Peqw/p25U4e1i
+      z75d2zhz8RK1tY3U1dRQXVlJc301Lj6hhAd40NLRgs7ojb+jnpuXzhK7YgfFN89RVVFBXVU1
+      RqChqpD//qv/THmbgQWJ4dTVl6HVu5MWH8aFizcID5iHVjc4zX8mYS2qycYFsjuazcj+C5at
+      zdmLn75xiJtnP+NmQcU0lDd9UpZm01p8gc7+6V/33sM/Qd9YwKenLj90/rdXhMklkbPP9AZA
+      PJQEYPaSw6BC0SQAQtEkAELRJABC0SQAQtEkAELRJABC0SQAQtEkAELRJABC0SQAQtEkAELR
+      fvD+ADKu/fRQJXrKxTCz1KQtgOlYrQ3LmNvMJd0SgFlq0u7QQiiB7AMIRZMACEWTAAhFkwAI
+      RZMACEWTAAhFkwAIRZMACEWTAAhFkwAIRZMACEWTAAhFkwAIRZMACEWTAAhFkwAIRZMACEWT
+      AAhFkwAIRZMACEWTAAhFkwAIRZMACEWTAAhFkwAIRZMACEWTAAhFkwAIRZMACEWTAAhFkwAI
+      RZv0DjHJKSm4u7vbshYhbG7SALi7u3P92jVb1iKEzf3gPcJAWgIxtz0yAJa2BMEhIazPyeH9
+      996bUmFC2MIjA/Ao82MWkxiop8voQ3yQBx99coKS+/enozYhrG7KR4GaW7WER0WxIDYEk53z
+      dNQkhM1MuQVgsJWzV1QM6Ppxn2c/DSUJYTtTD4BRT111DQAdHVNemxA2JSfChKJJAISiSQCE
+      okkAhKJJAISiSQCEok05AOExiXi4OODi7kNsZMh01CSEzUzxPIAjS5emwnAcw3ZepEX5ceT3
+      fyAxKYmbN25MT4VCWNEUW4BhDEZ7+vRmagpvcCcvn6bGxh/VFyhzzdPYAwlPZRMd6Db5ghpH
+      dr90mJ+89iJ7Dh3GaZLFwhPTCfBwACBn40YAFq9aj6ejatxyIYlPkRoTOPb8mYOH8fzm8cFD
+      By3eDvFk0bi5uPzqYTNCQ0NpbGgY+/lwZsqK71FZXkZbeyflldUAhISE0NTYaFEhew8fJv/8
+      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
     </thumbnail>
     <thumbnail height='164' name='mode' width='164'>
       iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAYAAAAZtYVBAAAACXBIWXMAAA7DAAAOwwHHb6hk
@@ -9491,72 +9679,78 @@
     </thumbnail>
     <thumbnail height='192' name='sales_bar' width='192'>
       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
-      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
-      TkSuQmCC
+      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
     </thumbnail>
     <thumbnail height='192' name='speechiness_explination' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
