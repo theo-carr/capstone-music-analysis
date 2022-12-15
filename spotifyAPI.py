@@ -91,12 +91,15 @@ def recommendations(track_id = "4nFAL2TKUOoAPQJ5DGGoTd"):
 
 def search(search_term = "clay%20pigeons", music_type = "track,album", limit = 5):
     #sleep to not go over api request limit
-    time.sleep(3)
+    time.sleep(1.5)
     #turn spaces into %20
     if search_term.find(" ") != -1:
         search_term = search_term.replace(' ', '%20')
+    if search_term.find('&') != -1:
+        search_term = search_term.replace('&', '%26')
+    print(search_term)
         
-    url = f"https://api.spotify.com/v1/search?q=track:{search_term}&type={music_type}&limit={limit}"
+    url = f"https://api.spotify.com/v1/search?q={music_type}:{search_term}&type={music_type}&limit={limit}"
 
     access_token = get_token().get('access_token')
     
