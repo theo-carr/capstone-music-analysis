@@ -100,6 +100,7 @@ def search(search_term = "clay%20pigeons", music_type = "track,album", limit = 5
     print(search_term)
         
     url = f"https://api.spotify.com/v1/search?q={music_type}:{search_term}&type={music_type}&limit={limit}"
+    print(url)
 
     access_token = get_token().get('access_token')
     
